@@ -4,14 +4,17 @@ const {
   updateBookService,
   deleteBookService,
 } = require("./service");
+const { STATUS_CODES, STATUS_MESSAGES } = require("../status");
 
 const getAllBooks = (_, res) => {
   try {
     const books = getAllBooksService();
-    
-    res.status(200).json(books);
+
+    res.status(STATUS_CODES.OK).json(books);
   } catch {
-    res.status(500).send("Internal server error");
+    res
+      .status(STATUS_CODES.INTERNAL_SERVER_ERROR)
+      .send(STATUS_MESSAGES.INTERNAL_SERVER_ERROR);
   }
 };
 
@@ -19,11 +22,16 @@ const addNewBook = (req, res) => {
   try {
     const isAdded = addNewBookService(req.body);
 
-    if (!isAdded) return res.status(400).send("Book already exists");
+    if (!isAdded)
+      return res
+        .send(STATUS_CODES.BAD_REQUEST)
+        .send(STATUS_MESSAGES.BAD_REQUEST);
 
     res.status(201).send("Book added!");
   } catch {
-    res.status(500).send("Internal server error");
+    res
+      .status(STATUS_CODES.INTERNAL_SERVER_ERROR)
+      .send(STATUS_MESSAGES.INTERNAL_SERVER_ERROR);
   }
 };
 
@@ -31,11 +39,14 @@ const updateBook = (req, res) => {
   try {
     let isUpdated = updateBookService(req.params.id, req.body);
 
-    if (!isUpdated) return res.status(404).send("Book not found");
+    if (!isUpdated)
+      return res.status(STATUS_CODES.NOT_FOUND).send(STATUS_MESSAGES.NOT_FOUND);
 
-    res.status(200).send("Book updated!");
+    res.status(STATUS_CODES.OK).send("Book updated!");
   } catch {
-    res.status(500).send("Internal server error");
+    res
+      .status(STATUS_CODES.INTERNAL_SERVER_ERROR)
+      .send(STATUS_MESSAGES.INTERNAL_SERVER_ERROR);
   }
 };
 
@@ -43,11 +54,14 @@ const deleteBook = (req, res) => {
   try {
     let isDeleted = deleteBookService(req.params.id);
 
-    if (!isDeleted) return res.status(404).send("Book not found");
+    if (!isDeleted)
+      return res.status(STATUS_CODES.NOT_FOUND).send(STATUS_MESSAGES.NOT_FOUND);
 
-    res.status(200).send("Book deleted!");
+    res.status(STATUS_CODES.OK).send("Book deleted!");
   } catch {
-    res.status(500).send("Internal server error");
+    res
+      .status(STATUS_CODES.INTERNAL_SERVER_ERROR)
+      .send(STATUS_MESSAGES.INTERNAL_SERVER_ERROR);
   }
 };
 
