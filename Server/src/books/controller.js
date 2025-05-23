@@ -7,8 +7,10 @@ const {
 const withErrorHandler = require("../utils/networkErrorHandler");
 const { STATUS_CODES, STATUS_MESSAGES } = require("../constants/status");
 
-const getAllBooks = withErrorHandler((_, res) => {
-  const books = getAllBooksService();
+const getAllBooks = withErrorHandler((req, res) => {
+  const { sort, group } = req.query;
+  const books = getAllBooksService(sort, group);
+
   res.status(STATUS_CODES.OK).json(books);
 });
 
