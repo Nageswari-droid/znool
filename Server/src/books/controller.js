@@ -5,7 +5,7 @@ const {
   deleteBookService,
 } = require("./service");
 const withErrorHandler = require("../utils/networkErrorHandler");
-const { STATUS_CODES, STATUS_MESSAGES } = require("../status");
+const { STATUS_CODES, STATUS_MESSAGES } = require("../constants/status");
 
 const getAllBooks = withErrorHandler((_, res) => {
   const books = getAllBooksService();
@@ -20,7 +20,7 @@ const addNewBook = withErrorHandler((req, res) => {
       .status(STATUS_CODES.BAD_REQUEST)
       .send(STATUS_MESSAGES.BAD_REQUEST);
 
-  res.status(201).send("Book added!");
+  res.status(STATUS_CODES.CREATED).send("Book added!");
 });
 
 const updateBook = withErrorHandler((req, res) => {

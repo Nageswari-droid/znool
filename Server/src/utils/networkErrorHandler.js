@@ -1,4 +1,4 @@
-const { STATUS_CODES, STATUS_MESSAGES } = require("../status");
+const { STATUS_CODES, STATUS_MESSAGES } = require("../constants/status");
 
 function withErrorHandler(handler) {
   return (req, res) => {
