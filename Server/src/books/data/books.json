@@ -685,18 +685,25 @@
     "year": 1855,
     "description": "A reflective and philosophical narrative."
   },
-  "f85eca89-98ca-43db-8502-9ad4e6ad1130": {
-    "title": "The Great Gatsby",
-    "author": "Aldous Huxley",
-    "genre": "Romance",
-    "year": 2014,
-    "description": "A story that challenges perceptions and conventions."
-  },
   "2e09fb7a-fc6c-43b7-95a4-fffa24600a9d": {
     "title": "New book, example",
     "author": "C.S. Lewis",
     "genre": "Science Fiction",
     "year": 3456,
     "description": ""
+  },
+  "c09a8dd5-9adc-4b77-ba37-334e308d69eb": {
+    "title": "The Great Gatsby",
+    "author": "Helga",
+    "genre": "Thriller",
+    "year": 1900,
+    "description": "A journey through fantastical lands."
+  },
+  "05b5fb80-748b-4db3-b07e-956ba1c8fe12": {
+    "title": "The Great Gatsby",
+    "author": "Aldous Huxley",
+    "genre": "Action",
+    "year": 2014,
+    "description": "A story that challenges perceptions and conventions."
   }
 }

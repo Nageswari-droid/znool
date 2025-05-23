@@ -1,20 +1,19 @@
 const fs = require("fs");
 const path = require("path");
+const withErrorHandler = require("../utils/dbErrorHandler");
 
 const filePath = path.join(__dirname, "data", "books.json");
 
 function read() {
-  try {
+  return withErrorHandler(() => {
     const data = fs.readFileSync(filePath, "utf-8");
 
     return JSON.parse(data);
-  } catch {
-    throw new Error("File not found");
-  }
+  });
 }
 
 function write(id, book) {
-  try {
+  return withErrorHandler(() => {
     const data = read();
 
     for (const value of Object.values(data)) {
@@ -26,13 +25,11 @@ function write(id, book) {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 
     return true;
-  } catch {
-    throw new Error("File not found");
-  }
+  });
 }
 
 function update(id, book) {
-  try {
+  return withErrorHandler(() => {
     const data = read();
 
     if (!data[id]) return false;
@@ -41,13 +38,11 @@ function update(id, book) {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 
     return true;
-  } catch {
-    throw new Error("File not found");
-  }
+  });
 }
 
 function remove(id) {
-  try {
+  return withErrorHandler(() => {
     const data = read();
 
     if (!data[id]) return false;
@@ -56,9 +51,7 @@ function remove(id) {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 
     return true;
-  } catch {
-    throw new Error("File not found");
-  }
+  });
 }
 
 module.exports = {
