@@ -6,18 +6,20 @@ const getAllBooksService = () => {
 };
 
 const addNewBookService = (data) => {
-  const id = uuid.v4();
-
+  if (!data.title || !data.author || !data.genre || !data.year) return false;
   for (const value of Object.values(books)) {
     if (value.title === data.title && value.author === data.author)
       return false;
   }
 
+  const id = uuid.v4();
   books[id] = data;
+
   return true;
 };
 
 const updateBookService = (id, data) => {
+  if (!data.title || !data.author || !data.genre || !data.year) return false;
   if (!(id in books)) return false;
 
   books[id] = data;
