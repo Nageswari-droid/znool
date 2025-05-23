@@ -22,6 +22,8 @@ UI/*.njsproj
 UI/*.sln
 UI/*.sw?
 
+Server/coverage
+
 */node_modules
 */.env
 
