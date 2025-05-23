@@ -4,7 +4,6 @@ const {
   updateBook,
   deleteBook,
 } = require("./controller");
-
 const router = require("express").Router();
 
 router.get("/books", getAllBooks);

@@ -9,9 +9,8 @@ const addNewBookService = (data) => {
   const id = uuid.v4();
 
   for (const value of Object.values(books)) {
-    if (value.title === data.title && value.author === data.author) {
+    if (value.title === data.title && value.author === data.author)
       return false;
-    }
   }
 
   books[id] = data;
@@ -26,7 +25,6 @@ const updateBookService = (id, data) => {
 };
 
 const deleteBookService = (id) => {
-  console.log(id, books, books[id]);
   if (!(id in books)) return false;
 
   delete books[id];
