@@ -1,17 +1,38 @@
-const getAllBooks = (req, res) => {
-  res.send("Get all books");
+const {
+  getAllBooksService,
+  addNewBookService,
+  updateBookService,
+  deleteBookService,
+} = require("./service");
+
+const getAllBooks = (_, res) => {
+  const books = getAllBooksService();
+  res.json(books);
 };
 
 const addNewBook = (req, res) => {
-  res.send("Add a new book");
+  addNewBookService(req.body);
+  res.status(201).send("Book added!");
 };
 
 const updateBook = (req, res) => {
-  res.send("Update a book");
+  let updated = updateBookService(req.params.id, req.body);
+
+  if (!updated) {
+    return res.status(404).send("Book not found");
+  }
+
+  res.status(200).send("Book updated!");
 };
 
 const deleteBook = (req, res) => {
-  res.send("Delete a book");
+  let deleted = deleteBookService(req.params.id, req.body);
+
+  if (!deleted) {
+    return res.status(404).send("Book not found");
+  }
+
+  res.status(200).send("Book deleted!");
 };
 
 module.exports = {
