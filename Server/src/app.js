@@ -1,11 +1,10 @@
 const express = require("express");
+const router = require("./books/index");
 
 const app = express();
 
 app.use(express.json());
 
-app.get(("/"), (_, res) => {
-    res.send("App is running!");
-});
+app.use("/", router);
 
 module.exports = app;

@@ -26,3 +26,4 @@ UI/*.sw?
 */.env
 
 homework.pdf
+.vscode
