@@ -1,0 +1,26 @@
+# Logs
+UI/logs
+UI/*.log
+UI/npm-debug.log*
+UI/yarn-debug.log*
+UI/yarn-error.log*
+UI/pnpm-debug.log*
+UI/lerna-debug.log*
+
+UI/dist
+UI/dist-ssr
+UI/*.local
+
+# Editor directories and files
+UI/.vscode/*
+UI/!.vscode/extensions.json
+UI/.idea
+UI/.DS_Store
+UI/*.suo
+UI/*.ntvs*
+UI/*.njsproj
+UI/*.sln
+UI/*.sw?
+
+*/node_modules
+*/.env
