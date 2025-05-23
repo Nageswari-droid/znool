@@ -11,14 +11,19 @@ const getAllBooks = (_, res) => {
 };
 
 const addNewBook = (req, res) => {
-  addNewBookService(req.body);
+  const isAdded = addNewBookService(req.body);
+
+  if (!isAdded) {
+    return res.status(400).send("Book already exists");
+  }
+
   res.status(201).send("Book added!");
 };
 
 const updateBook = (req, res) => {
-  let updated = updateBookService(req.params.id, req.body);
+  let isUpdated = updateBookService(req.params.id, req.body);
 
-  if (!updated) {
+  if (!isUpdated) {
     return res.status(404).send("Book not found");
   }
 
@@ -26,9 +31,9 @@ const updateBook = (req, res) => {
 };
 
 const deleteBook = (req, res) => {
-  let deleted = deleteBookService(req.params.id, req.body);
+  let isDeleted = deleteBookService(req.params.id);
 
-  if (!deleted) {
+  if (!isDeleted) {
     return res.status(404).send("Book not found");
   }
 
