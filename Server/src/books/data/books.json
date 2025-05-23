@@ -1,0 +1,702 @@
+{
+  "14da279a-3ce3-40a7-9c9f-3c95d8aa640e": {
+    "title": "The Great Gatsby",
+    "author": "Homer",
+    "genre": "Thriller",
+    "year": 1900,
+    "description": "A journey through fantastical lands."
+  },
+  "e2e2afe6-1f37-447a-8ce9-e6619db62ff6": {
+    "title": "Jane Eyre",
+    "author": "Aldous Huxley",
+    "genre": "Adventure",
+    "year": 1959,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "1b72253c-8ef4-4eb3-9813-462e10de4121": {
+    "title": "The Lord of the Rings",
+    "author": "Leo Tolstoy",
+    "genre": "Historical",
+    "year": 1902,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "1dfb555e-f089-4834-b75a-40883439def2": {
+    "title": "The Great Gatsby",
+    "author": "J.D. Salinger",
+    "genre": "Historical",
+    "year": 1858,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "4b359c52-054f-4435-a127-f00bc79f9559": {
+    "title": "1984",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Thriller",
+    "year": 1996,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "46ac25ae-55d0-4d4c-994d-856b36602eb9": {
+    "title": "Moby Dick",
+    "author": "Aldous Huxley",
+    "genre": "Historical",
+    "year": 1933,
+    "description": "A deep dive into the human psyche."
+  },
+  "408951e5-c357-4a73-a326-4e9fcb07276d": {
+    "title": "The Odyssey",
+    "author": "George Orwell",
+    "genre": "Fantasy",
+    "year": 1973,
+    "description": "A reflective and philosophical narrative."
+  },
+  "af10bab5-0038-4c1c-a721-c909f6a714ab": {
+    "title": "The Catcher in the Rye",
+    "author": "Harper Lee",
+    "genre": "Adventure",
+    "year": 1852,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "2eaf73b3-93d8-4d56-a6d9-cb2d50b09de6": {
+    "title": "Hamlet",
+    "author": "Herman Melville",
+    "genre": "Mystery",
+    "year": 2011,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "1b50b0a1-7cae-4e45-bc1e-452eb06a4190": {
+    "title": "The Catcher in the Rye",
+    "author": "Jane Austen",
+    "genre": "Science Fiction",
+    "year": 1851,
+    "description": "A reflective and philosophical narrative."
+  },
+  "2d86185f-bd74-47e9-9af4-d32138ac4834": {
+    "title": "The Catcher in the Rye",
+    "author": "J.R.R. Tolkien",
+    "genre": "Adventure",
+    "year": 1961,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "70de2451-b1b2-4c8c-9da7-49dd013d57a6": {
+    "title": "The Chronicles of Narnia",
+    "author": "J.D. Salinger",
+    "genre": "Adventure",
+    "year": 1882,
+    "description": "A deep dive into the human psyche."
+  },
+  "4a2c83e1-11d6-4883-bec7-a8777110b19d": {
+    "title": "To Kill a Mockingbird",
+    "author": "Charles Dickens",
+    "genre": "Romance",
+    "year": 1935,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "fcfdae22-722f-480b-b559-fb70ee7b2dc7": {
+    "title": "War and Peace",
+    "author": "George Orwell",
+    "genre": "Thriller",
+    "year": 2017,
+    "description": "A reflective and philosophical narrative."
+  },
+  "573f2dfd-9d00-4bd5-8dce-cb6fdee6e349": {
+    "title": "The Lord of the Rings",
+    "author": "Aldous Huxley",
+    "genre": "Drama",
+    "year": 1971,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "446f49dd-6158-4697-9db3-cbf95db9dbae": {
+    "title": "The Catcher in the Rye",
+    "author": "George Orwell",
+    "genre": "Thriller",
+    "year": 2020,
+    "description": "A reflective and philosophical narrative."
+  },
+  "7a01b3e9-b625-458f-acba-43ea42b5f26d": {
+    "title": "The Chronicles of Narnia",
+    "author": "Homer",
+    "genre": "Historical",
+    "year": 1918,
+    "description": "A timeless classic with modern relevance."
+  },
+  "a124833b-aa38-4e5e-b146-2dae4c5fc355": {
+    "title": "Jane Eyre",
+    "author": "William Shakespeare",
+    "genre": "Thriller",
+    "year": 1912,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "8aa4030c-bac6-4e2a-95cf-c37eb268ca2d": {
+    "title": "To Kill a Mockingbird",
+    "author": "George Orwell",
+    "genre": "Science Fiction",
+    "year": 1855,
+    "description": "A journey through fantastical lands."
+  },
+  "817f4fcb-09df-4252-b1c6-5fe193c5f727": {
+    "title": "1984",
+    "author": "Emily Brontë",
+    "genre": "Classic",
+    "year": 1968,
+    "description": "A deep dive into the human psyche."
+  },
+  "869c4635-d623-48a4-9b51-fc58b9967548": {
+    "title": "Fahrenheit 451",
+    "author": "C.S. Lewis",
+    "genre": "Poetry",
+    "year": 1864,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "99345c74-2a22-491c-860b-f9dae85d363c": {
+    "title": "The Catcher in the Rye",
+    "author": "C.S. Lewis",
+    "genre": "Historical",
+    "year": 1880,
+    "description": "A timeless classic with modern relevance."
+  },
+  "471483d9-7eb9-457b-b95a-8322a03f3c22": {
+    "title": "The Lord of the Rings",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Fantasy",
+    "year": 1893,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "6619d5c4-6b26-401b-a110-c4c1022daffc": {
+    "title": "The Lord of the Rings",
+    "author": "C.S. Lewis",
+    "genre": "Fantasy",
+    "year": 1898,
+    "description": "A reflective and philosophical narrative."
+  },
+  "6326df6b-2878-4ca5-a43d-b5fdee960cf3": {
+    "title": "The Lord of the Rings",
+    "author": "Leo Tolstoy",
+    "genre": "Romance",
+    "year": 1903,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "b790203a-e3a5-47a0-bdc7-3547e2cb04e8": {
+    "title": "The Great Gatsby",
+    "author": "Homer",
+    "genre": "Classic",
+    "year": 1874,
+    "description": "A timeless classic with modern relevance."
+  },
+  "c9dc216e-1976-4545-a5ad-a859b473344e": {
+    "title": "War and Peace",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Romance",
+    "year": 1945,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "c88a2e28-3b45-4859-9f12-cbcc398932f8": {
+    "title": "The Lord of the Rings",
+    "author": "Emily Brontë",
+    "genre": "Historical",
+    "year": 1856,
+    "description": "A reflective and philosophical narrative."
+  },
+  "e2ce4b3b-d6c3-434a-a19f-bc15f7d6e1a2": {
+    "title": "The Chronicles of Narnia",
+    "author": "Ray Bradbury",
+    "genre": "Classic",
+    "year": 1880,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "c8d32754-5d8c-4ffa-bf93-2c7906dca8b4": {
+    "title": "The Odyssey",
+    "author": "Khaled Hosseini",
+    "genre": "Drama",
+    "year": 1868,
+    "description": "A deep dive into the human psyche."
+  },
+  "e5a384b3-21ef-4f71-a1c3-05705d481909": {
+    "title": "The Catcher in the Rye",
+    "author": "George Orwell",
+    "genre": "Classic",
+    "year": 1963,
+    "description": "A journey through fantastical lands."
+  },
+  "15d8dab9-4cb6-4304-bf2e-75413e32b697": {
+    "title": "The Great Gatsby",
+    "author": "Leo Tolstoy",
+    "genre": "Classic",
+    "year": 1858,
+    "description": "A reflective and philosophical narrative."
+  },
+  "46e62c07-0335-48c9-b19b-d4b60ff7e61e": {
+    "title": "1984",
+    "author": "Harper Lee",
+    "genre": "Classic",
+    "year": 1851,
+    "description": "A timeless classic with modern relevance."
+  },
+  "83ea3386-c2ed-4ad3-89e5-573eeeec4a95": {
+    "title": "The Hobbit",
+    "author": "Homer",
+    "genre": "Historical",
+    "year": 1963,
+    "description": "A reflective and philosophical narrative."
+  },
+  "5e6e77aa-3230-42bd-9a08-fe6caf907587": {
+    "title": "Wuthering Heights",
+    "author": "Charles Dickens",
+    "genre": "Romance",
+    "year": 2015,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "060b6cd2-73ec-41e1-9ee8-62be48e6d26e": {
+    "title": "The Hobbit",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Science Fiction",
+    "year": 1962,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "b8e2cc37-074a-43c1-9d67-0dea341270e1": {
+    "title": "Great Expectations",
+    "author": "Jane Austen",
+    "genre": "Historical",
+    "year": 1912,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "3811503e-b5a8-47ea-8ec0-340357336e13": {
+    "title": "Tale of Two Cities",
+    "author": "C.S. Lewis",
+    "genre": "Science Fiction",
+    "year": 3456,
+    "description": ""
+  },
+  "c94a9c87-caf0-4ff0-9169-51ce033c65f9": {
+    "title": "Fahrenheit 451",
+    "author": "C.S. Lewis",
+    "genre": "Thriller",
+    "year": 1948,
+    "description": "A timeless classic with modern relevance."
+  },
+  "f3a90b88-b957-4e2a-8a41-1c6ecabdd5c6": {
+    "title": "To Kill a Mockingbird",
+    "author": "Charles Dickens",
+    "genre": "Adventure",
+    "year": 1981,
+    "description": "A journey through fantastical lands."
+  },
+  "2c2835bb-c07f-4a63-93f5-d0c85e2d69a3": {
+    "title": "Wuthering Heights",
+    "author": "Khaled Hosseini",
+    "genre": "Historical",
+    "year": 1894,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "ce4e0587-0b44-4f41-b0ac-64231d958fed": {
+    "title": "The Chronicles of Narnia",
+    "author": "Harper Lee",
+    "genre": "Historical",
+    "year": 1886,
+    "description": "A compelling story of love and loss."
+  },
+  "5079831b-b020-4ee8-b407-9470d18f9ef3": {
+    "title": "To Kill a Mockingbird",
+    "author": "J.R.R. Tolkien",
+    "genre": "Drama",
+    "year": 1936,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "626cb39f-bb5c-4277-843d-252ec1c2c4c4": {
+    "title": "Wuthering Heights",
+    "author": "J.R.R. Tolkien",
+    "genre": "Historical",
+    "year": 1982,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "aa01f2a9-9c8f-454c-8e6b-2e94188b288e": {
+    "title": "The Catcher in the Rye",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Fantasy",
+    "year": 1942,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "19b2f954-5744-4e0a-9442-d4b25bdd18db": {
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "genre": "Thriller",
+    "year": 1927,
+    "description": "A deep dive into the human psyche."
+  },
+  "ed78869f-1137-443d-a0d1-7435f9b861d5": {
+    "title": "Wuthering Heights",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "year": 2008,
+    "description": "A journey through fantastical lands."
+  },
+  "0aa42812-f8a1-4628-8010-2925abec217a": {
+    "title": "The Lord of the Rings",
+    "author": "Homer",
+    "genre": "Thriller",
+    "year": 1926,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "90972bdb-e3d6-4d90-8bdb-fcfc65c06be0": {
+    "title": "Great Expectations",
+    "author": "Herman Melville",
+    "genre": "Drama",
+    "year": 1927,
+    "description": "A journey through fantastical lands."
+  },
+  "441ff82a-5fec-4a63-b813-eef683d2a259": {
+    "title": "War and Peace",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Thriller",
+    "year": 1983,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "48914021-deb0-4d98-98b7-7f7fd0a5cbec": {
+    "title": "Brave New World",
+    "author": "J.R.R. Tolkien",
+    "genre": "Thriller",
+    "year": 1977,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "c1446379-7b0f-44ae-bada-3db1ff63ad05": {
+    "title": "Crime and Punishment",
+    "author": "Jane Austen",
+    "genre": "Science Fiction",
+    "year": 1913,
+    "description": "A deep dive into the human psyche."
+  },
+  "72bb3603-8487-4d07-bbe0-f9e3b8a0f655": {
+    "title": "The Great Gatsby",
+    "author": "George Orwell",
+    "genre": "Adventure",
+    "year": 1943,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "6ba32fc6-05b6-4a1f-821a-46a70ac13606": {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Fantasy",
+    "year": 2004,
+    "description": "A deep dive into the human psyche."
+  },
+  "088d5c21-24f7-4f8c-aaf3-86cb5c6ac953": {
+    "title": "The Odyssey",
+    "author": "C.S. Lewis",
+    "genre": "Drama",
+    "year": 1902,
+    "description": "A timeless classic with modern relevance."
+  },
+  "e118eff0-5218-4988-b9fb-d9da53d860f5": {
+    "title": "The Hobbit",
+    "author": "Charles Dickens",
+    "genre": "Mystery",
+    "year": 1986,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "ca7e02d1-7ccb-408f-b5fb-3f71a52a86dd": {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Historical",
+    "year": 2012,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "ed10da6c-63ea-478f-b055-36f2d15ffd9b": {
+    "title": "The Great Gatsby",
+    "author": "C.S. Lewis",
+    "genre": "Mystery",
+    "year": 1884,
+    "description": "A compelling story of love and loss."
+  },
+  "8488b951-6bb3-4347-8d6a-0c751210013e": {
+    "title": "Fahrenheit 451",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "year": 1946,
+    "description": "A reflective and philosophical narrative."
+  },
+  "0e6d7a1c-7c65-425d-9ccc-8b42f246c2fd": {
+    "title": "1984",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Adventure",
+    "year": 1924,
+    "description": "A journey through fantastical lands."
+  },
+  "add02c3f-4d8c-40fe-a39b-4fbe4bcdca7b": {
+    "title": "A Tale of Two Cities",
+    "author": "Khaled Hosseini",
+    "genre": "Mystery",
+    "year": 1955,
+    "description": "A deep dive into the human psyche."
+  },
+  "558015af-ca1b-4920-8744-5b5ea53c2d41": {
+    "title": "Great Expectations",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic",
+    "year": 1894,
+    "description": "A compelling story of love and loss."
+  },
+  "f254ed2d-175f-4c81-bbea-da00abffa4f0": {
+    "title": "The Kite Runner",
+    "author": "Ray Bradbury",
+    "genre": "Poetry",
+    "year": 1974,
+    "description": "A reflective and philosophical narrative."
+  },
+  "e8634878-120c-47dc-b3c5-48ba3d51b8e1": {
+    "title": "The Lord of the Rings",
+    "author": "Charlotte Brontë",
+    "genre": "Drama",
+    "year": 1861,
+    "description": "A deep dive into the human psyche."
+  },
+  "77a6c889-a469-401f-9b15-ddaa2c634fa0": {
+    "title": "Wuthering Heights",
+    "author": "Homer",
+    "genre": "Poetry",
+    "year": 1860,
+    "description": "A reflective and philosophical narrative."
+  },
+  "e5f6a622-f5de-4fda-8c6d-0b549c5e6ccf": {
+    "title": "Fahrenheit 451",
+    "author": "Emily Brontë",
+    "genre": "Mystery",
+    "year": 1949,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "b202ce47-4b4f-42b9-aca3-801291d94865": {
+    "title": "The Odyssey",
+    "author": "Leo Tolstoy",
+    "genre": "Historical",
+    "year": 1998,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "b4690b5b-c0de-4cd3-91cf-62b945d013e7": {
+    "title": "Hamlet",
+    "author": "Jane Austen",
+    "genre": "Historical",
+    "year": 1944,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "2702985e-e873-4093-9166-da5b1b74e612": {
+    "title": "1984",
+    "author": "Ray Bradbury",
+    "genre": "Historical",
+    "year": 1958,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "1ace9c19-41f9-416e-addd-d5c462aa7aeb": {
+    "title": "The Chronicles of Narnia",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "year": 1875,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "44ef5720-ef90-4dba-bb1a-33c318a75619": {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Romance",
+    "year": 1965,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "db2ddcde-2526-4e52-b796-a4e11e31347a": {
+    "title": "The Hobbit",
+    "author": "J.D. Salinger",
+    "genre": "Science Fiction",
+    "year": 1966,
+    "description": "A compelling story of love and loss."
+  },
+  "05360243-de7e-42f4-9e30-b81c34ecfcd3": {
+    "title": "The Hobbit",
+    "author": "William Shakespeare",
+    "genre": "Science Fiction",
+    "year": 1927,
+    "description": "A reflective and philosophical narrative."
+  },
+  "cdd9a5c5-a63f-4011-9536-df2cb7f6380e": {
+    "title": "Moby Dick",
+    "author": "J.D. Salinger",
+    "genre": "Fantasy",
+    "year": 1885,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "2a63b7b5-3a48-4b99-967f-bde058df3719": {
+    "title": "Brave New World",
+    "author": "George Orwell",
+    "genre": "Romance",
+    "year": 1984,
+    "description": "A timeless classic with modern relevance."
+  },
+  "ca46fc38-837d-42ae-b6c6-3251b0ca34d9": {
+    "title": "Pride and Prejudice",
+    "author": "Charlotte Brontë",
+    "genre": "Science Fiction",
+    "year": 1863,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "e39e05c4-df50-4621-b1fe-7faa76e14cc3": {
+    "title": "A Tale of Two Cities",
+    "author": "Emily Brontë",
+    "genre": "Science Fiction",
+    "year": 1893,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "d50d648b-8368-43a8-9e1d-5200dd01b954": {
+    "title": "1984",
+    "author": "Leo Tolstoy",
+    "genre": "Drama",
+    "year": 1906,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "97e131b7-e0eb-4367-aeda-32f29c360067": {
+    "title": "Crime and Punishment",
+    "author": "Khaled Hosseini",
+    "genre": "Mystery",
+    "year": 1919,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "21c9eb7d-8f1b-4b5e-aff2-98810aac272d": {
+    "title": "The Lord of the Rings",
+    "author": "Khaled Hosseini",
+    "genre": "Poetry",
+    "year": 2012,
+    "description": "A masterpiece of storytelling and imagination."
+  },
+  "63d7447f-7d2a-4215-b2c2-03a94baac118": {
+    "title": "The Lord of the Rings",
+    "author": "Homer",
+    "genre": "Romance",
+    "year": 1897,
+    "description": "A compelling story of love and loss."
+  },
+  "99228b23-6b8f-4a9a-a062-0b3423234b5f": {
+    "title": "Great Expectations",
+    "author": "Leo Tolstoy",
+    "genre": "Science Fiction",
+    "year": 2011,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "7452d72b-a06a-4166-b781-b5d1be252d24": {
+    "title": "The Hobbit",
+    "author": "Jane Austen",
+    "genre": "Thriller",
+    "year": 1894,
+    "description": "A deep dive into the human psyche."
+  },
+  "09734ba6-2a86-45e5-b590-3aa718eff9bd": {
+    "title": "The Catcher in the Rye",
+    "author": "William Shakespeare",
+    "genre": "Thriller",
+    "year": 2007,
+    "description": "A deep dive into the human psyche."
+  },
+  "7827d6dc-242c-4b73-b0eb-cf27febfe230": {
+    "title": "Crime and Punishment",
+    "author": "George Orwell",
+    "genre": "Science Fiction",
+    "year": 2014,
+    "description": "A journey through fantastical lands."
+  },
+  "a656a5ad-241c-40e5-81f0-cd1771c9a220": {
+    "title": "Great Expectations",
+    "author": "Aldous Huxley",
+    "genre": "Fantasy",
+    "year": 2002,
+    "description": "A deep dive into the human psyche."
+  },
+  "bb94a085-e938-4d35-8a9f-cdbcdda6bb66": {
+    "title": "Great Expectations",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic",
+    "year": 1860,
+    "description": "A journey through fantastical lands."
+  },
+  "1bc2c27c-9a63-49e4-9968-06b46bbb9b48": {
+    "title": "The Kite Runner",
+    "author": "William Shakespeare",
+    "genre": "Classic",
+    "year": 1880,
+    "description": "A deep dive into the human psyche."
+  },
+  "ccaba4cc-3fec-4607-bab1-8c64dcb3b090": {
+    "title": "The Great Gatsby",
+    "author": "J.R.R. Tolkien",
+    "genre": "Classic",
+    "year": 1917,
+    "description": "A compelling story of love and loss."
+  },
+  "044d7f0d-8d89-487e-9a02-71142c35c471": {
+    "title": "Hamlet",
+    "author": "Aldous Huxley",
+    "genre": "Classic",
+    "year": 1889,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "f91c5e2c-c2fa-4d68-915f-a54c2649b8cf": {
+    "title": "Fahrenheit 451",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic",
+    "year": 1974,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "0383332d-0a24-414e-9f6c-2edef4410e93": {
+    "title": "A Tale of Two Cities",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Thriller",
+    "year": 1936,
+    "description": "A fascinating exploration of society and norms."
+  },
+  "99691aa1-e5a1-4f0c-b6b7-8b92194e5f6a": {
+    "title": "The Chronicles of Narnia",
+    "author": "Jane Austen",
+    "genre": "Drama",
+    "year": 1920,
+    "description": "A deep dive into the human psyche."
+  },
+  "a62d3e17-2282-4bc3-a8ab-66a5b078b559": {
+    "title": "The Catcher in the Rye",
+    "author": "Aldous Huxley",
+    "genre": "Adventure",
+    "year": 1909,
+    "description": "An emotional rollercoaster of a novel."
+  },
+  "697c424c-e23c-4f96-8a4e-c269d5b5316a": {
+    "title": "Hamlet",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fantasy",
+    "year": 1890,
+    "description": "An epic tale of adventure and heroism."
+  },
+  "2dbe56c8-09a2-40e1-b72d-a0ecef9686de": {
+    "title": "A Tale of Two Cities",
+    "author": "J.D. Salinger",
+    "genre": "Drama",
+    "year": 1877,
+    "description": "A compelling story of love and loss."
+  },
+  "0bc2b532-aaca-430b-82a2-df984950c0d4": {
+    "title": "A Tale of Two Cities",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Adventure",
+    "year": 2013,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "82fd8a33-04c0-42bb-97bb-84dc9960db73": {
+    "title": "Hamlet",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Fantasy",
+    "year": 1855,
+    "description": "A reflective and philosophical narrative."
+  },
+  "f85eca89-98ca-43db-8502-9ad4e6ad1130": {
+    "title": "The Great Gatsby",
+    "author": "Aldous Huxley",
+    "genre": "Romance",
+    "year": 2014,
+    "description": "A story that challenges perceptions and conventions."
+  },
+  "2e09fb7a-fc6c-43b7-95a4-fffa24600a9d": {
+    "title": "New book, example",
+    "author": "C.S. Lewis",
+    "genre": "Science Fiction",
+    "year": 3456,
+    "description": ""
+  }
+}

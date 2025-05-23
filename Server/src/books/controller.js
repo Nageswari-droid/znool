@@ -4,7 +4,7 @@ const {
   updateBookService,
   deleteBookService,
 } = require("./service");
-const withErrorHandler = require("../utils/errorHandler");
+const withErrorHandler = require("../utils/networkErrorHandler");
 const { STATUS_CODES, STATUS_MESSAGES } = require("../status");
 
 const getAllBooks = withErrorHandler((_, res) => {
