@@ -1,0 +1,44 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  box-shadow: 0 2px 8px rgba(20, 52, 203, 0.05);
+  z-index: 1000;
+}
+
+.navbar-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #173be8;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.navbar-add-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 400px) {
+  .navbar-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+  }
+
+  .navbar-add-btn {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

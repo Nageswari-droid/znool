@@ -1,10 +1,14 @@
 import "./App.css";
-import "@visa/nova-styles/styles.css";
-import "@visa/nova-styles/themes/visa-light/index.css";
 import Router from "./Router";
+import NavBar from "./components/NavBar";
 
 function App() {
-  return <Router />;
+  return (
+    <div>
+      <NavBar onAddBook={() => {}} />
+      <Router />
+    </div>
+  );
 }
 
 export default App;
