@@ -10,7 +10,7 @@ const AddNewBookPage = () => {
   return (
     <div className="add-book-page-outer">
       <main className="add-book-main">
-        <section className="add-book-section" aria-labelledby="add-book-title">
+        <section className="add-book-section" aria-labelledby="add-book-form">
           <BookForm />
         </section>
       </main>

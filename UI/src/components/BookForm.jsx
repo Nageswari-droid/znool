@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@visa/nova-react";
 import GENRES from "../constants/genres";
-import "../styles/BookForm.css";
+import "../styles/AddNewBook.css";
 import TextBox from "./TextBox";
 import SelectBox from "./SelectBox";
 import { ADD_BOOK, CLEAR_INPUT } from "../constants/string";

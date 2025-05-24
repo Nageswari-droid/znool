@@ -21,14 +21,6 @@
   justify-content: center;
 }
 
-.add-book-title {
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #1434cb;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 .add-book-section {
   width: 100%;
   display: flex;
@@ -38,15 +30,78 @@
   padding: 5px;
 }
 
+.book-form {
+  width: 55%;
+  margin: auto;
+}
+
+.book-form-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #141414;
+}
+
+@media (max-width: 1000px) {
+  .add-book-main {
+    padding: 2rem 1.5rem;
+    width: 75%;
+  }
+  
+  .add-book-section {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .book-form {
+    width: 60%;
+  }
+}
+
+@media (max-width: 900px) {
+  .add-book-main {
+    padding: 2rem 1.5rem;
+    width: 85%;
+  }
+  
+  .add-book-section {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .book-form {
+    width: 85%;
+  }
+}
+
+@media (max-width: 790px) {
+  .book-form-label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 570px) {
+  .book-form {
+    width: 100%;
+  }
+
+  .book-form-label {
+    font-size: 0.75rem;
+  }
+}
+
 @media (max-width: 600px) {
   .add-book-section {
     max-width: 98vw;
   }
-  .add-book-form-wrapper {
-    padding: 1rem 0.5rem;
-    max-height: 80vh;
-  }
   .add-book-page-outer {
     padding: 1rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-book-main {
+    width: 90%;
+    padding: 1.5rem 0.8rem;
   }
 }
