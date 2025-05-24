@@ -1,0 +1,52 @@
+.add-book-page-outer {
+  min-height: calc(100vh - 60px);
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  padding-top: 80px;
+}
+
+.add-book-main {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 16px rgba(20, 52, 203, 0.08);
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-book-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #1434cb;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.add-book-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+@media (max-width: 600px) {
+  .add-book-section {
+    max-width: 98vw;
+  }
+  .add-book-form-wrapper {
+    padding: 1rem 0.5rem;
+    max-height: 80vh;
+  }
+  .add-book-page-outer {
+    padding: 1rem 0;
+  }
+}

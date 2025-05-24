@@ -5,5 +5,6 @@ const DESCRIPTION =
 const WELCOME = "Welcome to";
 const ADD_BOOK = "Add a new book";
 const DISPLAY_BOOKS = "Display all books";
+const CLEAR_INPUT = "Clear Input";
 
-export { TITLE, SUBTITLE, DESCRIPTION, WELCOME, ADD_BOOK, DISPLAY_BOOKS };
+export { TITLE, SUBTITLE, DESCRIPTION, WELCOME, ADD_BOOK, DISPLAY_BOOKS, CLEAR_INPUT };
