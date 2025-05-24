@@ -18,6 +18,7 @@
   color: #173be8;
   user-select: none;
   letter-spacing: 0.02em;
+  cursor: pointer;
 }
 
 .navbar-add-btn {

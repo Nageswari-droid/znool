@@ -1,5 +1,4 @@
 import BookForm from "../components/BookForm";
-import { ADD_BOOK } from "../constants/string";
 import "../styles/AddNewBook.css";
 
 const AddNewBookPage = () => {

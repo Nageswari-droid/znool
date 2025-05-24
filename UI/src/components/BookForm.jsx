@@ -1,6 +1,5 @@
-import { FocusEvent, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Button } from "@visa/nova-react";
-
 import GENRES from "../constants/genres";
 import "../styles/BookForm.css";
 import TextBox from "./TextBox";
