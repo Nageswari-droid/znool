@@ -7,7 +7,14 @@ import {
 } from "@visa/nova-react";
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
 
-const TextBox = ({ label, value, id, onChangeHandler, onClearHandler }) => {
+const TextBox = ({
+  type,
+  label,
+  value,
+  id,
+  onChangeHandler,
+  onClearHandler,
+}) => {
   return (
     <Utility
       className="text-box-container"
@@ -26,7 +33,7 @@ const TextBox = ({ label, value, id, onChangeHandler, onClearHandler }) => {
           aria-required="true"
           id={id}
           onChange={(e) => onChangeHandler(e.currentTarget.value)}
-          type="text"
+          type={type}
           value={value}
         />
         {value && (

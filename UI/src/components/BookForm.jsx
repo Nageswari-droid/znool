@@ -40,6 +40,7 @@ export default function BookForm() {
   return (
     <form className="book-form" noValidate aria-label="Add or update book form">
       <TextBox
+        type="text"
         label={"Book Title"}
         value={title}
         id={"input-book-title"}
@@ -47,6 +48,7 @@ export default function BookForm() {
         onClearHandler={() => setTitle("")}
       />
       <TextBox
+        type="text"
         label={"Author's Name"}
         value={author}
         id={"input-book-author"}
@@ -54,6 +56,7 @@ export default function BookForm() {
         onClearHandler={() => setAuthor("")}
       />
       <TextBox
+        type="number"
         label={"Published year"}
         value={year}
         id={"input-book-year"}
