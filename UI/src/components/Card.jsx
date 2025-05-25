@@ -22,7 +22,7 @@ import { useBooksContext } from "../context/booksContext";
 
 const Card = () => {
   const naviagte = useNavigate();
-  const { books } = useBooksContext();
+  const { books, deleteBook } = useBooksContext();
   const [modalOpen, setModalOpen] = useState(false);
   const [bookToDelete, setBookToDelete] = useState(null);
 
@@ -32,8 +32,7 @@ const Card = () => {
   };
 
   const handleConfirmDelete = () => {
-    // TODO: API call to delete book
-    console.log("deleted");
+    deleteBook(bookToDelete);
     setModalOpen(false);
     setBookToDelete(null);
   };

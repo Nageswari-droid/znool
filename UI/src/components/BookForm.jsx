@@ -6,11 +6,11 @@ import TextBox from "./TextBox";
 import SelectBox from "./SelectBox";
 import { ADD_BOOK, CLEAR_INPUT } from "../constants/string";
 
-export default function BookForm() {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [year, setYear] = useState("");
-  const [genre, setGenre] = useState("");
+export default function BookForm({ initialValue = {}, onSubmitHandler }) {
+  const [title, setTitle] = useState(initialValue.title || "");
+  const [author, setAuthor] = useState(initialValue.author || "");
+  const [year, setYear] = useState(initialValue.year || "");
+  const [genre, setGenre] = useState(initialValue.genre || "");
 
   const titleHandler = (updatedTitle) => {
     setTitle(updatedTitle);
@@ -78,6 +78,12 @@ export default function BookForm() {
           aria-label="Add a new book"
           onClick={(e) => {
             e.preventDefault();
+            onSubmitHandler({
+              title: title,
+              author: author,
+              genre: genre,
+              year: year,
+            });
           }}
         >
           {ADD_BOOK}
