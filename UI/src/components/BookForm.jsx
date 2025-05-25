@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Button } from "@visa/nova-react";
-import { CLEAR_INPUT, INPUT_DESCRIPTION, INPUT_DESCRIPTION_PLACEHOLDER } from "../constants/string";
+import {
+  CLEAR_INPUT,
+  INPUT_DESCRIPTION,
+  INPUT_DESCRIPTION_PLACEHOLDER,
+} from "../constants/string";
 import GENRES from "../constants/genres";
 import TextBox from "./TextBox";
 import SelectBox from "./SelectBox";
-import "../styles/BookForm.css";
 import TextArea from "./TextArea";
+import "../styles/BookPages.css";
 
 export default function BookForm({
   initialValue = {},

@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import LandingPage from "./pages/LandingPage";
 import AddNewBookPage from "./pages/AddNewBookPage";
 import DisplayAllBooks from "./pages/DisplayAllBooks";
@@ -13,6 +13,7 @@ export default function Router() {
       <Route path="/get-all-books" element={<DisplayAllBooks />} />
       <Route path="/edit-book/:id" element={<EditBookPage />} />
       <Route path="/error/:id" element={<ErrorPage />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }

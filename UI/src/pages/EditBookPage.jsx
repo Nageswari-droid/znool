@@ -1,8 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
-import { UPDATE_BOOK } from "../constants/string";
+import {
+  EDIT_WITHOUT_BOOK_SUBTITLE,
+  EDIT_WITHOUT_BOOK_TITLE,
+  UPDATE_BOOK,
+} from "../constants/string";
 import BookForm from "../components/BookForm";
 import LoadingPage from "./LoadingPage";
+import NoBookFoundPage from "./NoBookFoundPage";
 
 const EditBookPage = () => {
   const navigate = useNavigate();
@@ -23,7 +28,7 @@ const EditBookPage = () => {
 
   const handleUpdateBook = async (bookData) => {
     let refresh = false;
-    
+
     if (!isChanged(bookData)) {
       await updateBook(id, bookData);
       refresh = true;
@@ -33,6 +38,17 @@ const EditBookPage = () => {
   };
 
   if (loading) return <LoadingPage />;
+
+  if (!books || Object.entries(books).length === 0) {
+    return (
+      <NoBookFoundPage
+        title={EDIT_WITHOUT_BOOK_TITLE}
+        subtitle={EDIT_WITHOUT_BOOK_SUBTITLE}
+        isAddBtnRequired={true}
+        isGetBooksBtnRequired={true}
+      />
+    );
+  }
 
   return (
     <BookForm

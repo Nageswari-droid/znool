@@ -1,4 +1,5 @@
-.add-update-book-page-outer {
+.add-update-book-page-outer,
+.no-book-found-page-outer {
   min-height: calc(100vh - 60px);
   background: #f5f5f5;
   display: flex;
@@ -9,7 +10,8 @@
   padding-top: 80px;
 }
 
-.add-update-book-main {
+.add-update-book-main,
+.no-book-found-main {
   background: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 2px 16px rgba(20, 52, 203, 0.08);
@@ -21,7 +23,8 @@
   justify-content: center;
 }
 
-.add-update-book-section {
+.add-update-book-section,
+.no-book-found-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -42,12 +45,14 @@
 }
 
 @media (max-width: 1000px) {
-  .add-update-book-main {
+  .add-update-book-main,
+  .no-book-found-main {
     padding: 2rem 1.5rem;
     width: 75%;
   }
 
-  .add-update-book-section {
+  .add-update-book-section,
+  .no-book-found-section {
     width: 100%;
     padding: 5px;
   }
@@ -58,12 +63,14 @@
 }
 
 @media (max-width: 900px) {
-  .add-update-book-main {
+  .add-update-book-main,
+  .no-book-found-main {
     padding: 2rem 1.5rem;
     width: 85%;
   }
 
-  .add-update-book-section {
+  .add-update-book-section,
+  .no-book-found-section {
     width: 100%;
     padding: 5px;
   }
@@ -80,6 +87,12 @@
   }
 }
 
+@media (max-width: 750px) {
+  .no-book-found-content-title {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 570px) {
   .book-form {
     width: 100%;
@@ -91,16 +104,19 @@
 }
 
 @media (max-width: 600px) {
-  .add-update-book-section {
+  .add-update-book-section,
+  .no-book-found-section {
     max-width: 98vw;
   }
-  .add-update-book-page-outer {
+  .add-update-book-page-outer,
+  .no-book-found-page-outer {
     padding: 1rem 0;
   }
 }
 
 @media (max-width: 400px) {
-  .add-update-book-main {
+  .add-update-book-main,
+  .no-book-found-main {
     width: 90%;
     padding: 1.5rem 0.8rem;
   }
