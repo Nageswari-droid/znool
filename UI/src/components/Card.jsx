@@ -7,7 +7,16 @@ import {
   Typography,
   Utility,
 } from "@visa/nova-react";
-import { DELETE, EDIT, YEAR } from "../constants/string";
+import { useState } from "react";
+import {
+  CANCEL,
+  DELETE,
+  EDIT,
+  MODAL_TITLE,
+  YEAR,
+  CONFIRM,
+} from "../constants/string";
+import Modal from "./Modal";
 
 const books = {
   "14da279a-3ce3-40a7-9c9f-3c95d8aa640e": {
@@ -73,30 +82,29 @@ const books = {
     year: 2011,
     description: "A masterpiece of storytelling and imagination.",
   },
-  "1b50b0a1-7cae-4e45-bc1e-452eb06a4190": {
-    title: "The Catcher in the Rye",
-    author: "Jane Austen",
-    genre: "Science Fiction",
-    year: 1851,
-    description: "A reflective and philosophical narrative.",
-  },
-  "2d86185f-bd74-47e9-9af4-d32138ac4834": {
-    title: "The Catcher in the Rye",
-    author: "J.R.R. Tolkien",
-    genre: "Adventure",
-    year: 1961,
-    description: "An emotional rollercoaster of a novel.",
-  },
-  "70de2451-b1b2-4c8c-9da7-49dd013d57a6": {
-    title: "The Chronicles of Narnia",
-    author: "J.D. Salinger",
-    genre: "Adventure",
-    year: 1882,
-    description: "A deep dive into the human psyche.",
-  },
 };
 
 const Card = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [bookToDelete, setBookToDelete] = useState(null);
+
+  const handleDeleteClick = (id) => {
+    setBookToDelete(id);
+    setModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    // TODO: API call to delete book
+    console.log("deleted");
+    setModalOpen(false);
+    setBookToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    setModalOpen(false);
+    setBookToDelete(null);
+  };
+
   return (
     <div className="books-grid" role="list" aria-label="Book list">
       {Object.entries(books).map(([id, book]) => (
@@ -125,16 +133,29 @@ const Card = () => {
               vGap={16}
               vPaddingTop={12}
             >
-              <Button size="small" primary>
+              <Button size="small" colorScheme="primary">
                 {EDIT}
               </Button>
-              <Button size="small" destructive>
+              <Button
+                size="small"
+                colorScheme="destructive"
+                onClick={() => handleDeleteClick(id)}
+              >
                 {DELETE}
               </Button>
             </Utility>
           </Utility>
         </ContentCard>
       ))}
+      {modalOpen && (
+        <Modal
+          title={MODAL_TITLE}
+          optionOne={CONFIRM}
+          optionTwo={CANCEL}
+          handleCancelDelete={handleCancelDelete}
+          handleConfirmDelete={handleConfirmDelete}
+        />
+      )}
     </div>
   );
 };

@@ -9,6 +9,9 @@ const CLEAR_INPUT = "Clear Input";
 const EDIT = "Edit";
 const DELETE = "Delete";
 const YEAR = "Year:";
+const MODAL_TITLE = "Are you sure you want to delete?";
+const CONFIRM = "Confirm";
+const CANCEL = "Cancel";
 
 export {
   TITLE,
@@ -21,4 +24,7 @@ export {
   EDIT,
   DELETE,
   YEAR,
+  MODAL_TITLE,
+  CONFIRM,
+  CANCEL,
 };
