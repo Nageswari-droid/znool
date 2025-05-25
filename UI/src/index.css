@@ -8,7 +8,8 @@ body,
   font-family: sans-serif;
 }
 
-.text-box-container {
+.text-box-container,
+.text-area-container {
   width: 100%;
   display: flex;
   justify-content: space-between;

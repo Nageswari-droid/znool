@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@visa/nova-react";
-import { CLEAR_INPUT } from "../constants/string";
+import { CLEAR_INPUT, INPUT_DESCRIPTION, INPUT_DESCRIPTION_PLACEHOLDER } from "../constants/string";
 import GENRES from "../constants/genres";
 import TextBox from "./TextBox";
 import SelectBox from "./SelectBox";
 import "../styles/BookForm.css";
+import TextArea from "./TextArea";
 
 export default function BookForm({
   initialValue = {},
@@ -15,6 +16,9 @@ export default function BookForm({
   const [author, setAuthor] = useState(initialValue.author || "");
   const [year, setYear] = useState(initialValue.year || "");
   const [genre, setGenre] = useState(initialValue.genre || "");
+  const [description, setDescription] = useState(
+    initialValue.description || ""
+  );
 
   const titleHandler = (updatedTitle) => {
     setTitle(updatedTitle);
@@ -32,12 +36,17 @@ export default function BookForm({
     setGenre(updatedGenre);
   };
 
+  const descriptionHandler = (updatedDescription) => {
+    setDescription(updatedDescription);
+  };
+
   const onClearHandler = (e) => {
     e.preventDefault();
     setTitle("");
     setAuthor("");
     setYear("");
     setGenre("");
+    setDescription("");
   };
 
   return (
@@ -83,6 +92,12 @@ export default function BookForm({
               options={GENRES}
               onChangeHandler={genreHandler}
             />
+            <TextArea
+              label={INPUT_DESCRIPTION}
+              value={description}
+              placeholder={INPUT_DESCRIPTION_PLACEHOLDER}
+              onChangeHandler={descriptionHandler}
+            />
 
             <div className="multiple-action-btns">
               <Button
@@ -97,6 +112,7 @@ export default function BookForm({
                     author: author,
                     genre: genre,
                     year: year,
+                    description: description,
                   });
                 }}
               >

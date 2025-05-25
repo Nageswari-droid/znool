@@ -13,6 +13,8 @@ const YEAR = "Year:";
 const MODAL_TITLE = "Are you sure you want to delete?";
 const CONFIRM = "Confirm";
 const CANCEL = "Cancel";
+const INPUT_DESCRIPTION = "Description";
+const INPUT_DESCRIPTION_PLACEHOLDER = "Enter book description (Optional)";
 
 export {
   TITLE,
@@ -29,4 +31,6 @@ export {
   MODAL_TITLE,
   CONFIRM,
   CANCEL,
+  INPUT_DESCRIPTION,
+  INPUT_DESCRIPTION_PLACEHOLDER,
 };
