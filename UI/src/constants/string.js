@@ -1,3 +1,5 @@
+import { MAXIMUM_CHARACTERS } from "./characterLimit";
+
 const TITLE = "Znool";
 const SUBTITLE = "Your Smart Library Manager";
 const DESCRIPTION =
@@ -25,6 +27,7 @@ const GET_WITHOUT_BOOK_SUBTITLE_ONE =
   "Your library is waiting for its first book.";
 const GET_WITHOUT_BOOK_SUBTITLE_TWO =
   "Use the “Add new book” button below to begin building your collection!";
+const BOOK_DESCRIPTION_MAX_LEN_MESSAGE = `Max ${MAXIMUM_CHARACTERS} characters allowed.`;
 
 export {
   TITLE,
@@ -49,4 +52,5 @@ export {
   GET_WITHOUT_BOOK_TITLE,
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
+  BOOK_DESCRIPTION_MAX_LEN_MESSAGE,
 };

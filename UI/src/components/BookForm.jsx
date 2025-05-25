@@ -4,12 +4,14 @@ import {
   CLEAR_INPUT,
   INPUT_DESCRIPTION,
   INPUT_DESCRIPTION_PLACEHOLDER,
+  BOOK_DESCRIPTION_MAX_LEN_MESSAGE,
 } from "../constants/string";
+import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
 import GENRES from "../constants/genres";
-import TextBox from "./TextBox";
 import SelectBox from "./SelectBox";
 import TextArea from "./TextArea";
 import "../styles/BookPages.css";
+import TextBox from "./TextBox";
 
 export default function BookForm({
   initialValue = {},
@@ -41,7 +43,8 @@ export default function BookForm({
   };
 
   const descriptionHandler = (updatedDescription) => {
-    setDescription(updatedDescription);
+    const truncated = updatedDescription.slice(0, MAXIMUM_CHARACTERS);
+    setDescription(truncated);
   };
 
   const onClearHandler = (e) => {
@@ -101,6 +104,7 @@ export default function BookForm({
               value={description}
               placeholder={INPUT_DESCRIPTION_PLACEHOLDER}
               onChangeHandler={descriptionHandler}
+              helperText={BOOK_DESCRIPTION_MAX_LEN_MESSAGE}
             />
 
             <div className="multiple-action-btns">
