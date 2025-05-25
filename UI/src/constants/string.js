@@ -16,10 +16,15 @@ const CANCEL = "Cancel";
 const INPUT_DESCRIPTION = "Description";
 const INPUT_DESCRIPTION_PLACEHOLDER = "Enter book description (Optional)";
 const EDIT_WITHOUT_BOOK_TITLE = "No book selected!";
-const EDIT_WITHOUT_BOOK_SUBTITLE =
-  "Please add a book first or select a book to edit";
+const EDIT_WITHOUT_BOOK_SUBTITLE_ONE =
+  "Your library is empty or no book is currently selected.";
+const EDIT_WITHOUT_BOOK_SUBTITLE_TWO =
+  " Add a new book or pick one from your collection to edit its details.";
 const GET_WITHOUT_BOOK_TITLE = "No books found!";
-const GET_WITHOUT_BOOK_SUBTITLE = "Please add a book first";
+const GET_WITHOUT_BOOK_SUBTITLE_ONE =
+  "Your library is waiting for its first book.";
+const GET_WITHOUT_BOOK_SUBTITLE_TWO =
+  "Use the “Add new book” button below to begin building your collection!";
 
 export {
   TITLE,
@@ -39,7 +44,9 @@ export {
   INPUT_DESCRIPTION,
   INPUT_DESCRIPTION_PLACEHOLDER,
   EDIT_WITHOUT_BOOK_TITLE,
-  EDIT_WITHOUT_BOOK_SUBTITLE,
+  EDIT_WITHOUT_BOOK_SUBTITLE_ONE,
+  EDIT_WITHOUT_BOOK_SUBTITLE_TWO,
   GET_WITHOUT_BOOK_TITLE,
-  GET_WITHOUT_BOOK_SUBTITLE,
+  GET_WITHOUT_BOOK_SUBTITLE_ONE,
+  GET_WITHOUT_BOOK_SUBTITLE_TWO,
 };

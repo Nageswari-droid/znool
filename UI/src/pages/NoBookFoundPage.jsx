@@ -5,7 +5,8 @@ import "../styles/BookPages.css";
 
 const NoBookFoundPage = ({
   title,
-  subtitle,
+  subtitleOne,
+  subtitleTwo,
   isAddBtnRequired,
   isGetBooksBtnRequired = false,
 }) => {
@@ -41,7 +42,15 @@ const NoBookFoundPage = ({
               as="h4"
               style={{ textAlign: "center" }}
             >
-              {subtitle}
+              {subtitleOne}
+            </Typography>
+            <Typography
+              className="no-book-found-content-title"
+              variant="headline-5"
+              as="h4"
+              style={{ textAlign: "center" }}
+            >
+              {subtitleTwo}
             </Typography>
             <Utility
               vFlex

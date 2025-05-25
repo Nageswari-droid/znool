@@ -1,7 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
 import {
-  EDIT_WITHOUT_BOOK_SUBTITLE,
+  EDIT_WITHOUT_BOOK_SUBTITLE_ONE,
+  EDIT_WITHOUT_BOOK_SUBTITLE_TWO,
   EDIT_WITHOUT_BOOK_TITLE,
   UPDATE_BOOK,
 } from "../constants/string";
@@ -43,7 +44,8 @@ const EditBookPage = () => {
     return (
       <NoBookFoundPage
         title={EDIT_WITHOUT_BOOK_TITLE}
-        subtitle={EDIT_WITHOUT_BOOK_SUBTITLE}
+        subtitleOne={EDIT_WITHOUT_BOOK_SUBTITLE_ONE}
+        subtitleTwo={EDIT_WITHOUT_BOOK_SUBTITLE_TWO}
         isAddBtnRequired={true}
         isGetBooksBtnRequired={true}
       />

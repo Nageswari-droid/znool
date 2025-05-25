@@ -1,8 +1,14 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
+import {
+  GET_WITHOUT_BOOK_TITLE,
+  GET_WITHOUT_BOOK_SUBTITLE_ONE,
+  GET_WITHOUT_BOOK_SUBTITLE_TWO,
+} from "../constants/string";
 import Card from "../components/Card";
 import LoadingPage from "./LoadingPage";
+import NoBookFoundPage from "./NoBookFoundPage";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
@@ -23,6 +29,18 @@ const DisplayAllBooks = () => {
   }, [location.state]);
 
   if (loading) return <LoadingPage />;
+
+  if (!books || Object.entries(books).length === 0) {
+    return (
+      <NoBookFoundPage
+        title={GET_WITHOUT_BOOK_TITLE}
+        subtitleOne={GET_WITHOUT_BOOK_SUBTITLE_ONE}
+        subtitleTwo={GET_WITHOUT_BOOK_SUBTITLE_TWO}
+        isAddBtnRequired={true}
+        isGetBooksBtnRequired={false}
+      />
+    );
+  }
 
   return (
     <div className="display-books-outer">
