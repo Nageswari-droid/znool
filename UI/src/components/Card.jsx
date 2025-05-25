@@ -46,6 +46,7 @@ const Card = () => {
     <div className="books-grid" role="list" aria-label="Book list">
       {Object.entries(books).map(([id, book]) => (
         <ContentCard role="listitem" key={id} className="book-card">
+          {console.log(books, book, id)}
           <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
             <ContentCardTitle variant="headline-4">
               {book.title}
