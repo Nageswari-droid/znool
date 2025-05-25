@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
-import BookForm from "../components/BookForm";
 import { useBooksContext } from "../context/booksContext";
+import { UPDATE_BOOK } from "../constants/string";
+import BookForm from "../components/BookForm";
 
 const EditBookPage = () => {
   const navigate = useNavigate();
@@ -13,16 +14,11 @@ const EditBookPage = () => {
   };
 
   return (
-    <div className="edit-book-page-outer">
-      <main className="edit-book-main">
-        <section className="edit-book-section" aria-labelledby="edit-book-form">
-          <BookForm
-            initialValue={books[id]}
-            onSubmitHandler={handleUpdateBook}
-          />
-        </section>
-      </main>
-    </div>
+    <BookForm
+      initialValue={books[id]}
+      onSubmitHandler={handleUpdateBook}
+      submitLabel={UPDATE_BOOK}
+    />
   );
 };
 

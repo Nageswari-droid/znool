@@ -3,9 +3,10 @@ const SUBTITLE = "Your Smart Library Manager";
 const DESCRIPTION =
   "Easily add, update, and delete books in one place with Znool’s intuitive interface.";
 const WELCOME = "Welcome to";
-const ADD_BOOK = "Add a new book";
+const ADD_BOOK = "Add new book";
+const UPDATE_BOOK = "Update book";
 const DISPLAY_BOOKS = "Display all books";
-const CLEAR_INPUT = "Clear Input";
+const CLEAR_INPUT = "Clear";
 const EDIT = "Edit";
 const DELETE = "Delete";
 const YEAR = "Year:";
@@ -19,6 +20,7 @@ export {
   DESCRIPTION,
   WELCOME,
   ADD_BOOK,
+  UPDATE_BOOK,
   DISPLAY_BOOKS,
   CLEAR_INPUT,
   EDIT,

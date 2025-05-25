@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import BookForm from "../components/BookForm";
-import "../styles/AddNewBook.css";
 import { useBooksContext } from "../context/booksContext";
 import { v4 as uuidv4 } from "uuid";
+import { ADD_BOOK } from "../constants/string";
+import BookForm from "../components/BookForm";
 
 const AddNewBookPage = () => {
   const navigate = useNavigate();
@@ -17,15 +17,7 @@ const AddNewBookPage = () => {
     navigate("/get-all-books");
   };
 
-  return (
-    <div className="add-book-page-outer">
-      <main className="add-book-main">
-        <section className="add-book-section" aria-labelledby="add-book-form">
-          <BookForm onSubmitHandler={handleAddBook} />
-        </section>
-      </main>
-    </div>
-  );
+  return <BookForm onSubmitHandler={handleAddBook} submitLabel={ADD_BOOK} />;
 };
 
 export default AddNewBookPage;

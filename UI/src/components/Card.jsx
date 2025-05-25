@@ -9,6 +9,7 @@ import {
 } from "@visa/nova-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useBooksContext } from "../context/booksContext";
 import {
   CANCEL,
   DELETE,
@@ -18,7 +19,6 @@ import {
   CONFIRM,
 } from "../constants/string";
 import Modal from "./Modal";
-import { useBooksContext } from "../context/booksContext";
 
 const Card = () => {
   const naviagte = useNavigate();
@@ -46,7 +46,6 @@ const Card = () => {
     <div className="books-grid" role="list" aria-label="Book list">
       {Object.entries(books).map(([id, book]) => (
         <ContentCard role="listitem" key={id} className="book-card">
-          {console.log(books, book, id)}
           <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
             <ContentCardTitle variant="headline-4">
               {book.title}
