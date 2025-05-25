@@ -1,0 +1,12 @@
+.search-box-wrapper {
+  width: 100%;
+  padding: 2rem;
+}
+
+.search-box-label {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: black;
+  letter-spacing: 0.04em;
+}

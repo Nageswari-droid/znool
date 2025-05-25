@@ -9,7 +9,7 @@ import {
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
 import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
 
-const TextBox = ({
+const TextBoxWithError = ({
   type,
   label,
   value,
@@ -81,4 +81,4 @@ const TextBox = ({
   );
 };
 
-export default TextBox;
+export default TextBoxWithError;

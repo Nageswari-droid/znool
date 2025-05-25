@@ -1,19 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
 import {
   GET_WITHOUT_BOOK_TITLE,
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
+  SEARCH_BOOKS,
+  CANCEL,
+  CONFIRM,
+  MODAL_TITLE,
 } from "../constants/string";
 import Card from "../components/Card";
 import LoadingPage from "./LoadingPage";
 import NoBookFoundPage from "./NoBookFoundPage";
+import SearchBox from "../components/SearchBox";
+import Modal from "../components/Modal";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
-  const { books, getBooks, loading } = useBooksContext();
+  const { books, getBooks, deleteBook, loading } = useBooksContext();
+  const [searchValue, setSearchValue] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [bookToDelete, setBookToDelete] = useState(null);
+  const [booksBySearch, setBooksBySearch] = useState({});
   const location = useLocation();
+  let data = books;
+
+  if (searchValue) data = booksBySearch;
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -27,6 +40,40 @@ const DisplayAllBooks = () => {
     };
     fetchBooks();
   }, [location.state]);
+
+  const onChangeHandler = (value) => {
+    setSearchValue(value);
+    let titleStartsWith = {};
+
+    Object.entries(books).forEach(([id, book]) => {
+      if (book.title.startsWith(value)) {
+        console.log(book.title, book.title.startsWith(value), value);
+        titleStartsWith[id] = book;
+      }
+    });
+
+    setBooksBySearch(titleStartsWith);
+  };
+
+  const onClearHandler = () => {
+    setSearchValue("");
+  };
+
+  const handleConfirmDelete = async () => {
+    await deleteBook(bookToDelete);
+    setModalOpen(false);
+    setBookToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    setModalOpen(false);
+    setBookToDelete(null);
+  };
+
+  const handleDeleteClick = (id) => {
+    setBookToDelete(id);
+    setModalOpen(true);
+  };
 
   if (loading) return <LoadingPage />;
 
@@ -44,13 +91,38 @@ const DisplayAllBooks = () => {
 
   return (
     <div className="display-books-outer">
-      <div className="display-books-sidebar"></div>
+      <div className="display-books-sidebar">
+        <SearchBox
+          label={SEARCH_BOOKS}
+          value={searchValue}
+          onChangeHandler={onChangeHandler}
+          onClearHandler={onClearHandler}
+        />
+      </div>
       <main className="display-books-main" aria-label="All books main content">
         <section
           className="display-books-section"
           aria-label="All books section"
         >
-          <Card />
+          <div className="books-grid" role="list" aria-label="Book list">
+            {Object.entries(data).map(([id, book]) => (
+              <Card
+                key={id}
+                book={book}
+                id={id}
+                onDeleteHandler={handleDeleteClick}
+              />
+            ))}
+            {modalOpen && (
+              <Modal
+                title={MODAL_TITLE}
+                optionOne={CONFIRM}
+                optionTwo={CANCEL}
+                handleCancelDelete={handleCancelDelete}
+                handleConfirmDelete={handleConfirmDelete}
+              />
+            )}
+          </div>
         </section>
       </main>
     </div>

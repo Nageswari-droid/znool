@@ -5,16 +5,14 @@ import {
   INPUT_DESCRIPTION,
   INPUT_DESCRIPTION_PLACEHOLDER,
   MAX_LEN_MESSAGE,
-  YEAR_ERROR_MESSAGE
+  YEAR_ERROR_MESSAGE,
 } from "../constants/string";
-import {
-  MAXIMUM_CHARACTERS,
-} from "../constants/characterLimit";
+import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
 import GENRES from "../constants/genres";
 import SelectBox from "./SelectBox";
 import TextArea from "./TextArea";
 import "../styles/BookPages.css";
-import TextBox from "./TextBox";
+import TextBoxWithError from "./TextBoxWithError";
 
 const getCurrentYear = () => new Date().getFullYear();
 
@@ -101,7 +99,7 @@ export default function BookForm({
             noValidate
             aria-label="Add or update book form"
           >
-            <TextBox
+            <TextBoxWithError
               type="text"
               label={"Book Title"}
               value={title}
@@ -110,7 +108,7 @@ export default function BookForm({
               onClearHandler={() => setTitle("")}
               errorMessage={MAX_LEN_MESSAGE}
             />
-            <TextBox
+            <TextBoxWithError
               type="text"
               label={"Author's Name"}
               value={author}
@@ -119,7 +117,7 @@ export default function BookForm({
               onClearHandler={() => setAuthor("")}
               errorMessage={MAX_LEN_MESSAGE}
             />
-            <TextBox
+            <TextBoxWithError
               type="number"
               label={"Published year"}
               value={year}
