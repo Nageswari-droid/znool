@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BooksContext = createContext();
 
@@ -7,14 +8,26 @@ export const useBooksContext = () => useContext(BooksContext);
 export const BooksProvider = ({ children }) => {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const getBooks = async () => {
     setLoading(true);
 
     try {
       const response = await fetch("/books");
+
+      if (!response.ok) {
+        const error = new Error(
+          `Request failed with status ${response.status}`
+        );
+        error.status = response.status;
+        throw error;
+      }
+
       const data = await response.json();
       setBooks(data);
+    } catch (e) {
+      navigate("/error/500");
     } finally {
       setLoading(false);
     }
@@ -35,6 +48,10 @@ export const BooksProvider = ({ children }) => {
         ...prevBooks,
         [data.id]: data,
       }));
+    } catch (e) {
+      if (e.status === 400) {
+        navigate("/error/400");
+      } else navigate("/error/500");
     } finally {
       setLoading(false);
     }
@@ -52,6 +69,10 @@ export const BooksProvider = ({ children }) => {
       await response.json();
 
       setBooks((prev) => ({ ...prev, [id]: updatedBook }));
+    } catch (e) {
+      if (e.status === 404) {
+        navigate("/error/404");
+      } else navigate("/error/500");
     } finally {
       setLoading(false);
     }
@@ -71,6 +92,10 @@ export const BooksProvider = ({ children }) => {
         delete copy[id];
         return copy;
       });
+    } catch (e) {
+      if (e.status === 404) {
+        navigate("/error/404");
+      } else navigate("/error/500");
     } finally {
       setLoading(false);
     }

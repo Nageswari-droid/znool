@@ -7,7 +7,9 @@ const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const showAddBookButton = location.pathname !== "/add-new-book";
+  const showAddBookButton =
+    location.pathname !== "/add-new-book" &&
+    !location.pathname.startsWith("/error/");
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
