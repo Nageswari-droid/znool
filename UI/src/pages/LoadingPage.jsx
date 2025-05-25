@@ -7,7 +7,7 @@ import {
 
 const id = "indeterminate-linear-progress";
 
-const LoadingScreen = () => (
+const LoadingPage = () => (
   <div
     style={{
       width: "100vw",
@@ -35,4 +35,4 @@ const LoadingScreen = () => (
   </div>
 );
 
-export default LoadingScreen;
+export default LoadingPage;

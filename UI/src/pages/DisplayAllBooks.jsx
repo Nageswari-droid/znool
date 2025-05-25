@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Card from "../components/Card";
 import { useBooksContext } from "../context/booksContext";
-import LoadingScreen from "./LoadingPage";
+import LoadingPage from "./LoadingPage";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
@@ -14,7 +14,7 @@ const DisplayAllBooks = () => {
     fetchBooks();
   }, []);
 
-  if (loading) return <LoadingScreen />;
+  if (loading) return <LoadingPage />;
 
   return (
     <div className="display-books-outer">
