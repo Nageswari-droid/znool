@@ -71,7 +71,20 @@ const BooksContext = createContext();
 export const useBooksContext = () => useContext(BooksContext);
 
 export const BooksProvider = ({ children }) => {
-  const [books, setBooks] = useState(initialValue);
+  const [books, setBooks] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const getBooks = async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch("/books");
+      const data = await response.json();
+      setBooks(data);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const addBooks = (newBook) => {
     setBooks((prevBooks) => ({
@@ -92,7 +105,9 @@ export const BooksProvider = ({ children }) => {
     setBooks((prev) => ({ ...prev, [id]: updatedBook }));
 
   return (
-    <BooksContext.Provider value={{ books, addBooks, updateBook, deleteBook }}>
+    <BooksContext.Provider
+      value={{ books, getBooks, addBooks, updateBook, deleteBook, loading }}
+    >
       {children}
     </BooksContext.Provider>
   );
