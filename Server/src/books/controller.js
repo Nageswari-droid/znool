@@ -15,14 +15,14 @@ const getAllBooks = withErrorHandler((req, res) => {
 });
 
 const addNewBook = withErrorHandler((req, res) => {
-  const isAdded = addNewBookService(req.body);
+  const addedBook = addNewBookService(req.body);
 
-  if (!isAdded)
+  if (!addedBook)
     return res
       .status(STATUS_CODES.BAD_REQUEST)
       .send(STATUS_MESSAGES.BAD_REQUEST);
 
-  res.status(STATUS_CODES.CREATED).send("Book added!");
+  res.status(STATUS_CODES.CREATED).send(addedBook);
 });
 
 const updateBook = withErrorHandler((req, res) => {

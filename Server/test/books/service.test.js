@@ -233,10 +233,10 @@ describe("Book Service", () => {
         year: 1973,
         description: "A reflective and philosophical narrative.",
       };
-      write.mockReturnValue(true);
+      write.mockReturnValue(book);
 
       const result = addNewBookService(book);
-      expect(result).toBe(true);
+      expect(result.title).toStrictEqual(book.title);
     });
   });
 

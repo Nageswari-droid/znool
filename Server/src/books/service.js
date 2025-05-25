@@ -24,7 +24,13 @@ const addNewBookService = (data) => {
   if (!data.title || !data.author || !data.genre || !data.year) return false;
 
   const id = uuid.v4();
-  return write(id, data);
+
+  if (write(id, data)) {
+    data["id"] = id;
+    return data;
+  }
+
+  return false;
 };
 
 const updateBookService = (id, data) => {
