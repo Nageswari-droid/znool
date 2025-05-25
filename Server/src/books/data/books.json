@@ -16,14 +16,14 @@
   "1b72253c-8ef4-4eb3-9813-462e10de4121": {
     "title": "The Lord of the Rings",
     "author": "Leo Tolstoy",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1902,
     "description": "A story that challenges perceptions and conventions."
   },
   "1dfb555e-f089-4834-b75a-40883439def2": {
     "title": "The Great Gatsby",
     "author": "J.D. Salinger",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1858,
     "description": "An emotional rollercoaster of a novel."
   },
@@ -37,7 +37,7 @@
   "46ac25ae-55d0-4d4c-994d-856b36602eb9": {
     "title": "Moby Dick",
     "author": "Aldous Huxley",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1933,
     "description": "A deep dive into the human psyche."
   },
@@ -114,7 +114,7 @@
   "7a01b3e9-b625-458f-acba-43ea42b5f26d": {
     "title": "The Chronicles of Narnia",
     "author": "Homer",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1918,
     "description": "A timeless classic with modern relevance."
   },
@@ -149,7 +149,7 @@
   "99345c74-2a22-491c-860b-f9dae85d363c": {
     "title": "The Catcher in the Rye",
     "author": "C.S. Lewis",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1880,
     "description": "A timeless classic with modern relevance."
   },
@@ -191,7 +191,7 @@
   "c88a2e28-3b45-4859-9f12-cbcc398932f8": {
     "title": "The Lord of the Rings",
     "author": "Emily Brontë",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1856,
     "description": "A reflective and philosophical narrative."
   },
@@ -233,7 +233,7 @@
   "83ea3386-c2ed-4ad3-89e5-573eeeec4a95": {
     "title": "The Hobbit",
     "author": "Homer",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1963,
     "description": "A reflective and philosophical narrative."
   },
@@ -254,7 +254,7 @@
   "b8e2cc37-074a-43c1-9d67-0dea341270e1": {
     "title": "Great Expectations",
     "author": "Jane Austen",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1912,
     "description": "An epic tale of adventure and heroism."
   },
@@ -282,14 +282,14 @@
   "2c2835bb-c07f-4a63-93f5-d0c85e2d69a3": {
     "title": "Wuthering Heights",
     "author": "Khaled Hosseini",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1894,
     "description": "An epic tale of adventure and heroism."
   },
   "ce4e0587-0b44-4f41-b0ac-64231d958fed": {
     "title": "The Chronicles of Narnia",
     "author": "Harper Lee",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1886,
     "description": "A compelling story of love and loss."
   },
@@ -303,7 +303,7 @@
   "626cb39f-bb5c-4277-843d-252ec1c2c4c4": {
     "title": "Wuthering Heights",
     "author": "J.R.R. Tolkien",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1982,
     "description": "A fascinating exploration of society and norms."
   },
@@ -394,7 +394,7 @@
   "ca7e02d1-7ccb-408f-b5fb-3f71a52a86dd": {
     "title": "Jane Eyre",
     "author": "Charlotte Brontë",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 2012,
     "description": "An emotional rollercoaster of a novel."
   },
@@ -464,21 +464,21 @@
   "b202ce47-4b4f-42b9-aca3-801291d94865": {
     "title": "The Odyssey",
     "author": "Leo Tolstoy",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1998,
     "description": "A masterpiece of storytelling and imagination."
   },
   "b4690b5b-c0de-4cd3-91cf-62b945d013e7": {
     "title": "Hamlet",
     "author": "Jane Austen",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1944,
     "description": "A masterpiece of storytelling and imagination."
   },
   "2702985e-e873-4093-9166-da5b1b74e612": {
     "title": "1984",
     "author": "Ray Bradbury",
-    "genre": "Historical",
+    "genre": "Historical Fiction",
     "year": 1958,
     "description": "A story that challenges perceptions and conventions."
   },
