@@ -5,13 +5,18 @@ import {
   INPUT_DESCRIPTION,
   INPUT_DESCRIPTION_PLACEHOLDER,
   MAX_LEN_MESSAGE,
+  YEAR_ERROR_MESSAGE
 } from "../constants/string";
-import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
+import {
+  MAXIMUM_CHARACTERS,
+} from "../constants/characterLimit";
 import GENRES from "../constants/genres";
 import SelectBox from "./SelectBox";
 import TextArea from "./TextArea";
 import "../styles/BookPages.css";
 import TextBox from "./TextBox";
+
+const getCurrentYear = () => new Date().getFullYear();
 
 export default function BookForm({
   initialValue = {},
@@ -25,6 +30,7 @@ export default function BookForm({
   const [description, setDescription] = useState(
     initialValue.description || ""
   );
+  const [yearError, setYearError] = useState("");
 
   const titleHandler = (updatedTitle) => {
     setTitle(updatedTitle);
@@ -35,7 +41,21 @@ export default function BookForm({
   };
 
   const yearHandler = (updatedYear) => {
-    setYear(updatedYear);
+    let yearValue = updatedYear;
+
+    if (updatedYear.length > 4) {
+      yearValue = updatedYear.slice(0, 4);
+    }
+
+    const currentYear = getCurrentYear();
+    if (yearValue && parseInt(yearValue) > currentYear) {
+      setYearError(YEAR_ERROR_MESSAGE + currentYear);
+      setYear(yearValue);
+      return;
+    }
+
+    setYearError("");
+    setYear(yearValue);
   };
 
   const genreHandler = (updatedGenre) => {
@@ -54,6 +74,7 @@ export default function BookForm({
     setYear("");
     setGenre("");
     setDescription("");
+    setYearError("");
   };
 
   const isSubmitBtnDisabled = () => {
@@ -63,7 +84,8 @@ export default function BookForm({
       !genre ||
       !year ||
       title.length > MAXIMUM_CHARACTERS ||
-      author.length > MAXIMUM_CHARACTERS
+      author.length > MAXIMUM_CHARACTERS ||
+      !!yearError
     );
   };
 
@@ -103,7 +125,11 @@ export default function BookForm({
               value={year}
               id={"input-book-year"}
               onChangeHandler={yearHandler}
-              onClearHandler={() => setYear("")}
+              onClearHandler={() => {
+                setYear("");
+                setYearError("");
+              }}
+              errorMessage={yearError}
             />
             <SelectBox
               id={"input-book-genre"}

@@ -16,9 +16,13 @@ const TextBox = ({
   id,
   onChangeHandler,
   onClearHandler,
-  errorMessage
+  errorMessage,
 }) => {
-  const isError = value.length > MAXIMUM_CHARACTERS;
+  let isError = value.length > MAXIMUM_CHARACTERS;
+
+  if (type === "number") {
+    isError = !!errorMessage;
+  }
 
   return (
     <Utility

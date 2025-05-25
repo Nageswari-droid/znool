@@ -28,6 +28,7 @@ const GET_WITHOUT_BOOK_SUBTITLE_ONE =
 const GET_WITHOUT_BOOK_SUBTITLE_TWO =
   "Use the “Add new book” button below to begin building your collection!";
 const MAX_LEN_MESSAGE = `Cannot exceed ${MAXIMUM_CHARACTERS} characters.`;
+const YEAR_ERROR_MESSAGE = "Year cannot exceed ";
 
 export {
   TITLE,
@@ -53,4 +54,5 @@ export {
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
   MAX_LEN_MESSAGE,
+  YEAR_ERROR_MESSAGE,
 };
