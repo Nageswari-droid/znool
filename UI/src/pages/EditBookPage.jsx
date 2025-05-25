@@ -2,16 +2,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
 import { UPDATE_BOOK } from "../constants/string";
 import BookForm from "../components/BookForm";
+import LoadingPage from "./LoadingPage";
 
 const EditBookPage = () => {
   const navigate = useNavigate();
-  const { books, updateBook } = useBooksContext();
+  const { books, updateBook, loading } = useBooksContext();
   const { id } = useParams();
 
-  const handleUpdateBook = (bookData) => {
-    updateBook(id, bookData);
+  const handleUpdateBook = async (bookData) => {
+    await updateBook(id, bookData);
     navigate("/get-all-books");
   };
+
+  if (loading) return <LoadingPage />;
 
   return (
     <BookForm

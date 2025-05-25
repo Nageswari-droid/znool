@@ -40,6 +40,23 @@ export const BooksProvider = ({ children }) => {
     }
   };
 
+  const updateBook = async (id, updatedBook) => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(`/books/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedBook),
+      });
+      await response.json();
+
+      setBooks((prev) => ({ ...prev, [id]: updatedBook }));
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const deleteBook = (id) => {
     setBooks((prev) => {
       const copy = { ...prev };
@@ -47,9 +64,6 @@ export const BooksProvider = ({ children }) => {
       return copy;
     });
   };
-
-  const updateBook = (id, updatedBook) =>
-    setBooks((prev) => ({ ...prev, [id]: updatedBook }));
 
   return (
     <BooksContext.Provider
