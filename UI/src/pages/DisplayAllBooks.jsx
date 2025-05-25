@@ -1,18 +1,26 @@
 import { useEffect } from "react";
-import Card from "../components/Card";
+import { useLocation } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
+import Card from "../components/Card";
 import LoadingPage from "./LoadingPage";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
-  const { getBooks, loading } = useBooksContext();
+  const { books, getBooks, loading } = useBooksContext();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchBooks = async () => {
-      await getBooks();
+      if (
+        !books ||
+        Object.keys(books).length === 0 ||
+        location.state?.refresh
+      ) {
+        await getBooks();
+      }
     };
     fetchBooks();
-  }, []);
+  }, [location.state]);
 
   if (loading) return <LoadingPage />;
 

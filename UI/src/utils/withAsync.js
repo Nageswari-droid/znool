@@ -9,8 +9,6 @@ export const withAsync = async (
   try {
     const result = await asyncFn();
 
-    console.log(result);
-
     if (onSuccess) onSuccess(result);
 
     return result;

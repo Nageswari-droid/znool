@@ -10,7 +10,7 @@ const AddNewBookPage = () => {
 
   const handleAddBook = async (bookData) => {
     await addBooks(bookData);
-    navigate("/get-all-books");
+    navigate("/get-all-books", { state: { refresh: true } });
   };
 
   if (loading) return <LoadingPage />;

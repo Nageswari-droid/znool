@@ -25,8 +25,6 @@ export const updateBookApi = async (id, updatedBook) => {
     body: JSON.stringify(updatedBook),
   });
 
-  console.log(response);
-
   if (!response.ok) throw { status: response.status };
 
   return response.json();
