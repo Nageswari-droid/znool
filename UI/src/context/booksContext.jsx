@@ -57,12 +57,23 @@ export const BooksProvider = ({ children }) => {
     }
   };
 
-  const deleteBook = (id) => {
-    setBooks((prev) => {
-      const copy = { ...prev };
-      delete copy[id];
-      return copy;
-    });
+  const deleteBook = async (id) => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(`/books/${id}`, {
+        method: "DELETE",
+      });
+      await response.json();
+
+      setBooks((prev) => {
+        const copy = { ...prev };
+        delete copy[id];
+        return copy;
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

@@ -31,8 +31,8 @@ const Card = () => {
     setModalOpen(true);
   };
 
-  const handleConfirmDelete = () => {
-    deleteBook(bookToDelete);
+  const handleConfirmDelete = async () => {
+    await deleteBook(bookToDelete);
     setModalOpen(false);
     setBookToDelete(null);
   };
