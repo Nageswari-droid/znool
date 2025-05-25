@@ -31,7 +31,7 @@ const updateBook = withErrorHandler((req, res) => {
   if (!isUpdated)
     return res.status(STATUS_CODES.NOT_FOUND).send(STATUS_MESSAGES.NOT_FOUND);
 
-  res.status(STATUS_CODES.OK).send("Book updated!");
+  res.status(STATUS_CODES.OK).send({ data: "Book updated!" });
 });
 
 const deleteBook = withErrorHandler((req, res) => {
@@ -40,7 +40,7 @@ const deleteBook = withErrorHandler((req, res) => {
   if (!isDeleted)
     return res.status(STATUS_CODES.NOT_FOUND).send(STATUS_MESSAGES.NOT_FOUND);
 
-  res.status(STATUS_CODES.OK).send("Book deleted!");
+  res.status(STATUS_CODES.OK).send({ data: "Book deleted!" });
 });
 
 module.exports = {
