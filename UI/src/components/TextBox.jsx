@@ -4,8 +4,10 @@ import {
   InputContainer,
   Label,
   Utility,
+  InputMessage,
 } from "@visa/nova-react";
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
+import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
 
 const TextBox = ({
   type,
@@ -14,7 +16,10 @@ const TextBox = ({
   id,
   onChangeHandler,
   onClearHandler,
+  errorMessage
 }) => {
+  const isError = value.length > MAXIMUM_CHARACTERS;
+
   return (
     <Utility
       className="text-box-container"
@@ -28,29 +33,46 @@ const TextBox = ({
           *
         </span>
       </Label>
-      <InputContainer className="input-container">
-        <Input
-          aria-required="true"
-          id={id}
-          onChange={(e) => onChangeHandler(e.currentTarget.value)}
-          type={type}
-          value={value}
-        />
-        {value && (
-          <Button
-            aria-label={`Clear ${label}`}
-            buttonSize="small"
-            colorScheme="tertiary"
-            iconButton
-            onClick={onClearHandler}
-            subtle
-            tabIndex={0}
-            type="button"
+      <Utility className="input-with-error-container">
+        <InputContainer style={{ width: "100%" }}>
+          <Input
+            aria-required="true"
+            id={id}
+            onChange={(e) => onChangeHandler(e.currentTarget.value)}
+            type={type}
+            value={value}
+            aria-invalid={isError}
+          />
+          {value && (
+            <Button
+              aria-label={`Clear ${label}`}
+              buttonSize="small"
+              colorScheme="tertiary"
+              iconButton
+              onClick={onClearHandler}
+              subtle
+              tabIndex={0}
+              type="button"
+            >
+              <VisaClearAltTiny />
+            </Button>
+          )}
+        </InputContainer>
+        {isError && (
+          <InputMessage
+            aria-atomic="true"
+            aria-live="assertive"
+            id={`${id}-message`}
+            role="warning"
+            style={{
+              fontSize: "0.7rem",
+              color: "#C62F2F",
+            }}
           >
-            <VisaClearAltTiny />
-          </Button>
+            {errorMessage}
+          </InputMessage>
         )}
-      </InputContainer>
+      </Utility>
     </Utility>
   );
 };

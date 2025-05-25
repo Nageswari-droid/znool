@@ -36,7 +36,7 @@ const TextArea = ({
           <div
             style={{
               color: "rgb(33, 27, 51, 0.6)",
-              fontSize: "0.8rem",
+              fontSize: "0.7rem",
               marginBottom: "0.5rem",
               width: "100%",
             }}

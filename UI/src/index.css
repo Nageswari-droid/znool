@@ -17,7 +17,7 @@ body,
   margin-bottom: 1rem;
 }
 
-.input-container,
+.input-with-error-container,
 .select-option-container {
   width: 60%;
 }
@@ -50,14 +50,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 1000px) {
-  .input-container,
+  .input-with-error-container,
   .select-option-container {
     width: 65%;
   }
 }
 
 @media (max-width: 790px) {
-  .input-container,
+  .input-with-error-container,
   .select-option-container {
     width: 60%;
   }

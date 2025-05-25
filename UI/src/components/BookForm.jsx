@@ -4,7 +4,7 @@ import {
   CLEAR_INPUT,
   INPUT_DESCRIPTION,
   INPUT_DESCRIPTION_PLACEHOLDER,
-  BOOK_DESCRIPTION_MAX_LEN_MESSAGE,
+  MAX_LEN_MESSAGE,
 } from "../constants/string";
 import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
 import GENRES from "../constants/genres";
@@ -56,6 +56,17 @@ export default function BookForm({
     setDescription("");
   };
 
+  const isSubmitBtnDisabled = () => {
+    return (
+      !title ||
+      !author ||
+      !genre ||
+      !year ||
+      title.length > MAXIMUM_CHARACTERS ||
+      author.length > MAXIMUM_CHARACTERS
+    );
+  };
+
   return (
     <div className="add-update-book-page-outer">
       <main className="add-update-book-main">
@@ -75,6 +86,7 @@ export default function BookForm({
               id={"input-book-title"}
               onChangeHandler={titleHandler}
               onClearHandler={() => setTitle("")}
+              errorMessage={MAX_LEN_MESSAGE}
             />
             <TextBox
               type="text"
@@ -83,6 +95,7 @@ export default function BookForm({
               id={"input-book-author"}
               onChangeHandler={authorHandler}
               onClearHandler={() => setAuthor("")}
+              errorMessage={MAX_LEN_MESSAGE}
             />
             <TextBox
               type="number"
@@ -104,12 +117,12 @@ export default function BookForm({
               value={description}
               placeholder={INPUT_DESCRIPTION_PLACEHOLDER}
               onChangeHandler={descriptionHandler}
-              helperText={BOOK_DESCRIPTION_MAX_LEN_MESSAGE}
+              helperText={MAX_LEN_MESSAGE}
             />
 
             <div className="multiple-action-btns">
               <Button
-                disabled={!title || !author || !genre || !year}
+                disabled={isSubmitBtnDisabled()}
                 type="submit"
                 className="common-btn"
                 aria-label={submitLabel}
