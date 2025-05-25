@@ -33,7 +33,9 @@ const LandingPage = () => {
             alternate
             className="common-btn"
             aria-label={DISPLAY_BOOKS}
-            onClick={() => {}}
+            onClick={() => {
+              navigate("/get-all-books");
+            }}
           >
             {DISPLAY_BOOKS}
           </Button>
