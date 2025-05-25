@@ -60,15 +60,21 @@ const Card = () => {
               {YEAR} {book.year} <br />
               {book.genre}
             </Typography>
-            <Typography className="v-pt-4 truncate-2-lines" variant="body-2">
+            <Typography className="v-pt-4 truncate-2-lines" variant="body-2" style={{
+              height: '45px',
+              overflowY: 'auto',
+              marginBottom: '0.5rem',
+            }}>
               {book.description}
             </Typography>
+            <div style={{ flexGrow: 1 }} />
             <Utility
               vAlignItems="center"
               vFlex
               vFlexWrap
               vGap={16}
               vPaddingTop={12}
+              style={{ justifyContent: 'flex-end' }}
             >
               <Button
                 size="small"
