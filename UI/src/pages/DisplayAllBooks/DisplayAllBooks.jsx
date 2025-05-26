@@ -16,7 +16,7 @@ import SearchBox from "../../components/SearchBox";
 import RadioButtonGroup from "../../components/RadioButtonGroup";
 import Cards from "../../components/Cards";
 import { filterByGroup, filter } from "../../utils/filter";
-import "../styles/DisplayAllBooks.css";
+import "../../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
   const {
