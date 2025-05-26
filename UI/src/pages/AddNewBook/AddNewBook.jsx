@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useBooksContext } from "../../context/booksContext";
 import { ADD_BOOK } from "../../constants/string";
 import BookForm from "../../components/BookForm";
-import LoadingPage from "../LoadingPage";
+import Loading from "../../components/Loading";
 
 const AddNewBook = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const AddNewBook = () => {
     navigate("/get-all-books", { state: { refresh: true } });
   };
 
-  if (loading) return <LoadingPage />;
+  if (loading) return <Loading />;
 
   return <BookForm onSubmitHandler={handleAddBook} submitLabel={ADD_BOOK} />;
 };

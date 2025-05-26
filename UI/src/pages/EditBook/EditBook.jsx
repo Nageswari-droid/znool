@@ -1,16 +1,17 @@
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useBooksContext } from "../context/booksContext";
+import { useBooksContext } from "../../context/booksContext";
 import {
   EDIT_WITHOUT_BOOK_SUBTITLE_ONE,
   EDIT_WITHOUT_BOOK_SUBTITLE_TWO,
   EDIT_WITHOUT_BOOK_TITLE,
   UPDATE_BOOK,
-} from "../constants/string";
-import BookForm from "../components/BookForm";
-import LoadingPage from "./LoadingPage";
-import NoBookFoundPage from "./NoBookFoundPage";
+} from "../../constants/string";
+import BookForm from "../../components/BookForm";
+import Loading from "../../components/Loading";
+import NoBookFound from "../../components/NoBookFound";
 
-const EditBookPage = () => {
+const EditBook = () => {
   const navigate = useNavigate();
   const { books, updateBook, loading } = useBooksContext();
   const { id } = useParams();
@@ -38,11 +39,11 @@ const EditBookPage = () => {
     navigate("/get-all-books", { state: { refresh } });
   };
 
-  if (loading) return <LoadingPage />;
+  if (loading) return <Loading />;
 
   if (!books || Object.entries(books).length === 0) {
     return (
-      <NoBookFoundPage
+      <NoBookFound
         title={EDIT_WITHOUT_BOOK_TITLE}
         subtitleOne={EDIT_WITHOUT_BOOK_SUBTITLE_ONE}
         subtitleTwo={EDIT_WITHOUT_BOOK_SUBTITLE_TWO}
@@ -61,4 +62,4 @@ const EditBookPage = () => {
   );
 };
 
-export default EditBookPage;
+export default EditBook;

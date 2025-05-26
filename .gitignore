@@ -22,7 +22,7 @@ UI/*.njsproj
 UI/*.sln
 UI/*.sw?
 
-Server/coverage
+*/coverage
 
 */node_modules
 */.env

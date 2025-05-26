@@ -1,9 +1,10 @@
+import React from "react";
 import { Button, Typography, Utility } from "@visa/nova-react";
 import { useNavigate } from "react-router-dom";
 import { ADD_BOOK, DISPLAY_BOOKS } from "../constants/string";
 import "../styles/BookPages.css";
 
-const NoBookFoundPage = ({
+const NoBookFound = ({
   title,
   subtitleOne,
   subtitleTwo,
@@ -80,4 +81,4 @@ const NoBookFoundPage = ({
   );
 };
 
-export default NoBookFoundPage;
+export default NoBookFound;

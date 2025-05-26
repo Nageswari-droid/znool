@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { useBooksContext } from "../../context/booksContext";
@@ -10,8 +10,8 @@ import {
   NO_ENTRIES_FOUND,
 } from "../../constants/string";
 import { radioBtnsSideBar } from "../../constants/radioBtns";
-import LoadingPage from "../LoadingPage";
-import NoBookFoundPage from "../NoBookFoundPage";
+import Loading from "../../components/Loading";
+import NoBookFound from "../../components/NoBookFound";
 import SearchBox from "../../components/SearchBox";
 import RadioButtonGroup from "../../components/RadioButtonGroup";
 import Cards from "../../components/Cards";
@@ -77,11 +77,11 @@ const DisplayAllBooks = () => {
     setSearchValue("");
   };
 
-  if (loading) return <LoadingPage />;
+  if (loading) return <Loading />;
 
   if (!books || Object.entries(books).length === 0) {
     return (
-      <NoBookFoundPage
+      <NoBookFound
         title={GET_WITHOUT_BOOK_TITLE}
         subtitleOne={GET_WITHOUT_BOOK_SUBTITLE_ONE}
         subtitleTwo={GET_WITHOUT_BOOK_SUBTITLE_TWO}

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ProgressLabel,
   ProgressLinear,
@@ -7,7 +8,7 @@ import {
 
 const id = "indeterminate-linear-progress";
 
-const LoadingPage = () => (
+const Loading = () => (
   <div
     style={{
       width: "100vw",
@@ -35,4 +36,4 @@ const LoadingPage = () => (
   </div>
 );
 
-export default LoadingPage;
+export default Loading;
