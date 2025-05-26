@@ -9,12 +9,13 @@ import { VisaClearAltTiny } from "@visa/nova-icons-react";
 import { SEARCH_PLACEHOLDER } from "../constants/string";
 import "../styles/SearchBox.css";
 
-const SearchBox = ({ label, value, onChangeHandler, onClearHandler }) => {
+const SearchBox = ({ label, value, onChangeHandler, onClearHandler, hideLabelOnMobile }) => {
   return (
     <Utility className="search-box-wrapper">
       <Label
         htmlFor="search-books-input"
-        className="search-box-label"
+        style={hideLabelOnMobile ? { display: "none" } : {}}
+        className={hideLabelOnMobile ? "search-label-mobile" : ""}
       >
         {label}
       </Label>

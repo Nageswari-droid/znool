@@ -20,6 +20,10 @@
   z-index: 1;
 }
 
+.display-books-topbar {
+  display: none;
+}
+
 .display-books-main {
   margin-left: 25vw;
   padding: 2rem;

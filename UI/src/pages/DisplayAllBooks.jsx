@@ -91,6 +91,15 @@ const DisplayAllBooks = () => {
 
   return (
     <div className="display-books-outer">
+      <div className="display-books-topbar">
+        <SearchBox
+          label={SEARCH_BOOKS}
+          value={searchValue}
+          onChangeHandler={onChangeHandler}
+          onClearHandler={onClearHandler}
+          hideLabelOnMobile={true}
+        />
+      </div>
       <div className="display-books-sidebar">
         <SearchBox
           label={SEARCH_BOOKS}
