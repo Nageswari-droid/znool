@@ -1,20 +1,21 @@
+import React from 'react';
 import { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import { useBooksContext } from "../context/booksContext";
+import { useBooksContext } from "../../context/booksContext";
 import {
   GET_WITHOUT_BOOK_TITLE,
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
   SEARCH_BOOKS,
   NO_ENTRIES_FOUND,
-} from "../constants/string";
-import { radioBtnsSideBar } from "../constants/radioBtns";
-import LoadingPage from "./LoadingPage";
-import NoBookFoundPage from "./NoBookFoundPage";
-import SearchBox from "../components/SearchBox";
-import RadioButtonGroup from "../components/RadioButtonGroup";
-import Cards from "../components/Cards";
-import { filterByGroup, filter } from "../utils/filter";
+} from "../../constants/string";
+import { radioBtnsSideBar } from "../../constants/radioBtns";
+import LoadingPage from "../LoadingPage";
+import NoBookFoundPage from "../NoBookFoundPage";
+import SearchBox from "../../components/SearchBox";
+import RadioButtonGroup from "../../components/RadioButtonGroup";
+import Cards from "../../components/Cards";
+import { filterByGroup, filter } from "../../utils/filter";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
