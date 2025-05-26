@@ -22,11 +22,11 @@ export const BooksProvider = ({ children }) => {
   };
 
   const getBooksGroupedByAuthor = () => {
-    setBooks(groupByAuthor(books));
+    return groupByAuthor(books);
   };
 
   const getBooksGroupedByGenre = () => {
-    setBooks(groupByGenre(books));
+    return groupByGenre(books);
   };
 
   const getBooks = async () => {

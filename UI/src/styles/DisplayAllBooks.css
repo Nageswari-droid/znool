@@ -49,7 +49,7 @@
   width: 100%;
 }
 
-.truncate-2-lines {
+.card-author {
   line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -79,10 +79,24 @@
   text-align: center;
 }
 
-@media (max-width: 750px) {
-  .modal-content-title {
-    font-size: 1rem;
-  }
+.author-group-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.author-group-title {
+  font-weight: bold;
+  color: #111;
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.card-description {
+  height: 45px;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1100px) {
@@ -109,8 +123,45 @@
   }
 }
 
+@media (max-width: 770px) {
+  .modal-content-title {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-author {
+    font-size: 15px;
+  }
+
+  .card-year-genre {
+    font-size: 14px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    height: 60px;
+  }
+
+  .card-action-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 750px) {
+  .modal-content-title {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .books-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-description {
+    height: auto;
   }
 }

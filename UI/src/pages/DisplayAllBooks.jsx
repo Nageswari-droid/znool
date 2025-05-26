@@ -17,18 +17,33 @@ import CardGroup from "../components/CardGroup";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
-  const { books, getBooks, sortBooks, loading } = useBooksContext();
+  const { books, getBooks, loading, sortBooks, getBooksGroupedByAuthor } =
+    useBooksContext();
   const [searchValue, setSearchValue] = useState("");
   const [booksBySearch, setBooksBySearch] = useState({});
   const [viewOption, setViewOption] = useState("none");
+  const [groupedByAuthor, setGroupedByAuthor] = useState({});
   const location = useLocation();
 
   let data = books;
-  if (searchValue) {
+  let groupBy = null;
+
+  if (viewOption === "author") {
+    data = groupedByAuthor;
+    groupBy = "author";
+  } else if (searchValue) {
     data = Object.keys(booksBySearch).length > 0 ? booksBySearch : books;
   }
 
   const noEntriesFound = searchValue && Object.keys(booksBySearch).length === 0;
+
+  useEffect(() => {
+    if (viewOption === "sort") {
+      sortBooks();
+    } else if (viewOption === "author") {
+      setGroupedByAuthor(getBooksGroupedByAuthor());
+    }
+  }, [viewOption]);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -42,12 +57,6 @@ const DisplayAllBooks = () => {
     };
     fetchBooks();
   }, [location.state]);
-
-  useEffect(() => {
-    if (viewOption === "sort") {
-      sortBooks();
-    }
-  }, [viewOption]);
 
   const onChangeHandler = (value) => {
     setSearchValue(value);
@@ -94,7 +103,11 @@ const DisplayAllBooks = () => {
         {noEntriesFound && (
           <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
         )}
-        <RadioButtonGroup arr={radioBtnsTopBar} />
+        <RadioButtonGroup
+          arr={radioBtnsTopBar}
+          viewOption={viewOption}
+          setViewOption={setViewOption}
+        />
       </div>
       <div className="display-books-sidebar">
         <SearchBox
@@ -112,7 +125,7 @@ const DisplayAllBooks = () => {
           setViewOption={setViewOption}
         />
       </div>
-      <CardGroup data={data} />
+      <CardGroup data={data} groupBy={groupBy} />
     </div>
   );
 };

@@ -16,22 +16,22 @@ const Card = ({ book, id, onDeleteHandler }) => {
   return (
     <ContentCard role="listitem" key={id} className="book-card">
       <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
-        <ContentCardTitle variant="headline-4">{book.title}</ContentCardTitle>
-        <ContentCardSubtitle className="truncate-2-lines" variant="subtitle-3">
+        <ContentCardTitle variant="headline-4 card-title">
+          {book.title}
+        </ContentCardTitle>
+        <ContentCardSubtitle
+          className="truncate-2-lines card-author"
+          variant="subtitle-3"
+        >
           {book.author}
         </ContentCardSubtitle>
-        <Typography className="v-pt-4">
+        <Typography className="v-pt-4 card-year-genre">
           {YEAR} {book.year} <br />
           {book.genre}
         </Typography>
         <Typography
-          className="v-pt-4 truncate-2-lines"
+          className="v-pt-4 card-description"
           variant="body-2"
-          style={{
-            height: "45px",
-            overflowY: "auto",
-            marginBottom: "0.5rem",
-          }}
         >
           {book.description}
         </Typography>
@@ -45,6 +45,7 @@ const Card = ({ book, id, onDeleteHandler }) => {
           style={{ justifyContent: "flex-end" }}
         >
           <Button
+            className="card-action-btn"
             size="small"
             colorScheme="primary"
             onClick={() => naviagte(`/edit-book/${id}`)}
@@ -52,6 +53,7 @@ const Card = ({ book, id, onDeleteHandler }) => {
             {EDIT}
           </Button>
           <Button
+            className="card-action-btn"
             size="small"
             colorScheme="destructive"
             onClick={() => onDeleteHandler(id)}
