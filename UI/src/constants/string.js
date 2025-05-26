@@ -31,6 +31,7 @@ const MAX_LEN_MESSAGE = `Cannot exceed ${MAXIMUM_CHARACTERS} characters.`;
 const YEAR_ERROR_MESSAGE = "Year cannot exceed ";
 const SEARCH_BOOKS = "Search books";
 const SEARCH_PLACEHOLDER = "Type to search by title";
+const NO_ENTRIES_FOUND = "No entries found";
 
 export {
   TITLE,
@@ -58,5 +59,6 @@ export {
   MAX_LEN_MESSAGE,
   YEAR_ERROR_MESSAGE,
   SEARCH_BOOKS,
-  SEARCH_PLACEHOLDER
+  SEARCH_PLACEHOLDER,
+  NO_ENTRIES_FOUND,
 };

@@ -9,6 +9,7 @@ import {
   CANCEL,
   CONFIRM,
   MODAL_TITLE,
+  NO_ENTRIES_FOUND,
 } from "../constants/string";
 import Card from "../components/Card";
 import LoadingPage from "./LoadingPage";
@@ -24,9 +25,13 @@ const DisplayAllBooks = () => {
   const [bookToDelete, setBookToDelete] = useState(null);
   const [booksBySearch, setBooksBySearch] = useState({});
   const location = useLocation();
-  let data = books;
 
-  if (searchValue) data = booksBySearch;
+  let data = books;
+  if (searchValue) {
+    data = Object.keys(booksBySearch).length > 0 ? booksBySearch : books;
+  }
+
+  const noEntriesFound = searchValue && Object.keys(booksBySearch).length === 0;
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -46,8 +51,7 @@ const DisplayAllBooks = () => {
     let titleStartsWith = {};
 
     Object.entries(books).forEach(([id, book]) => {
-      if (book.title.startsWith(value)) {
-        console.log(book.title, book.title.startsWith(value), value);
+      if (book.title.toLowerCase().startsWith(value.toLowerCase())) {
         titleStartsWith[id] = book;
       }
     });
@@ -57,6 +61,7 @@ const DisplayAllBooks = () => {
 
   const onClearHandler = () => {
     setSearchValue("");
+    setBooksBySearch({});
   };
 
   const handleConfirmDelete = async () => {
@@ -99,6 +104,9 @@ const DisplayAllBooks = () => {
           onClearHandler={onClearHandler}
           hideLabelOnMobile={true}
         />
+        {noEntriesFound && (
+          <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
+        )}
       </div>
       <div className="display-books-sidebar">
         <SearchBox
@@ -107,6 +115,9 @@ const DisplayAllBooks = () => {
           onChangeHandler={onChangeHandler}
           onClearHandler={onClearHandler}
         />
+        {noEntriesFound && (
+          <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
+        )}
       </div>
       <main className="display-books-main" aria-label="All books main content">
         <section

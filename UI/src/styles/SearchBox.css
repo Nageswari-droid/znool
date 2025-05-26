@@ -1,6 +1,6 @@
 .search-box-wrapper {
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 2em 0 2rem;
 }
 
 .search-box-label {
@@ -8,5 +8,14 @@
   font-size: 1rem;
   font-weight: bolder;
   color: black;
+  letter-spacing: 0.04em;
+}
+
+.no-entries-found-message {
+  color: #ce1f1f;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding-left: 2rem;
   letter-spacing: 0.04em;
 }
