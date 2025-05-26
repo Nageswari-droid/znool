@@ -20,10 +20,6 @@
   z-index: 1;
 }
 
-.display-books-topbar {
-  display: none;
-}
-
 .display-books-main {
   margin-left: 25vw;
   padding: 2rem;
@@ -99,6 +95,33 @@
   margin-bottom: 0.5rem;
 }
 
+.search-box-wrapper {
+  width: 100%;
+  padding: 2rem 2em 0 2rem;
+}
+
+.search-box-label {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: black;
+  letter-spacing: 0.04em;
+}
+
+.no-entries-found-message {
+  color: #ce1f1f;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.radio-btn-side-container {
+  width: 100%;
+  padding: 2rem 2em 0 2rem;
+}
+
 @media (max-width: 1100px) {
   .books-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -115,8 +138,31 @@
 
 @media (max-width: 800px) {
   .display-books-sidebar {
-    display: none;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: normal;
+    height: auto;
+    padding: 1rem;
   }
+
+  .radio-btn-side-container,
+  .search-box-wrapper {
+    padding-top: 0;
+  }
+
+  .display-books-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .display-books-main {
     margin-left: 0;
     width: 100%;
@@ -148,11 +194,19 @@
   .card-action-btn {
     font-size: 12px;
   }
+
+  .radio-label {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 750px) {
   .modal-content-title {
     font-size: 1rem;
+  }
+
+  .search-box-label {
+    font-size: 0.8rem;
   }
 }
 
@@ -163,5 +217,16 @@
 
   .card-description {
     height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .radio-btn-side-container,
+  .search-box-wrapper {
+    padding: 0.25rem;
+  }
+
+  .search-box-label {
+    display: none;
   }
 }

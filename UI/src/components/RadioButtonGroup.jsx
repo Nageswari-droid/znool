@@ -18,7 +18,9 @@ const RadioButtonGroup = ({ arr, viewOption, setViewOption }) => {
                   setViewOption(e.target.value);
                 }}
               />
-              <Label htmlFor={id}>{label}</Label>
+              <Label className="radio-label" htmlFor={id}>
+                {label}
+              </Label>
             </Utility>
           );
         })}

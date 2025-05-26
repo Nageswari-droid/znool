@@ -8,7 +8,7 @@ import {
   SEARCH_BOOKS,
   NO_ENTRIES_FOUND,
 } from "../constants/string";
-import { radioBtnsTopBar, radioBtnsSideBar } from "../constants/radioBtns";
+import { radioBtnsSideBar } from "../constants/radioBtns";
 import LoadingPage from "./LoadingPage";
 import NoBookFoundPage from "./NoBookFoundPage";
 import SearchBox from "../components/SearchBox";
@@ -92,23 +92,6 @@ const DisplayAllBooks = () => {
 
   return (
     <div className="display-books-outer">
-      <div className="display-books-topbar">
-        <SearchBox
-          label={SEARCH_BOOKS}
-          value={searchValue}
-          onChangeHandler={onChangeHandler}
-          onClearHandler={onClearHandler}
-          hideLabelOnMobile={true}
-        />
-        {noEntriesFound && (
-          <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
-        )}
-        <RadioButtonGroup
-          arr={radioBtnsTopBar}
-          viewOption={viewOption}
-          setViewOption={setViewOption}
-        />
-      </div>
       <div className="display-books-sidebar">
         <SearchBox
           label={SEARCH_BOOKS}
