@@ -7,7 +7,7 @@ import {
   deleteBookApi,
 } from "../api/booksApi";
 import { withAsync } from "../utils/withAsync";
-import { sortByTitle } from "../utils/transform";
+import { groupByAuthor, groupByGenre, sortByTitle } from "../utils/transform";
 
 const BooksContext = createContext();
 export const useBooksContext = () => useContext(BooksContext);
@@ -19,6 +19,14 @@ export const BooksProvider = ({ children }) => {
 
   const sortBooks = () => {
     setBooks(sortByTitle(books));
+  };
+
+  const getBooksGroupedByAuthor = () => {
+    setBooks(groupByAuthor(books));
+  };
+
+  const getBooksGroupedByGenre = () => {
+    setBooks(groupByGenre(books));
   };
 
   const getBooks = async () => {
@@ -75,6 +83,8 @@ export const BooksProvider = ({ children }) => {
       value={{
         books,
         sortBooks,
+        getBooksGroupedByAuthor,
+        getBooksGroupedByGenre,
         getBooks,
         addBooks,
         updateBook,
