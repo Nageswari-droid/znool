@@ -7,6 +7,7 @@ import {
   deleteBookApi,
 } from "../api/booksApi";
 import { withAsync } from "../utils/withAsync";
+import { sortByTitle } from "../utils/transform";
 
 const BooksContext = createContext();
 export const useBooksContext = () => useContext(BooksContext);
@@ -15,6 +16,10 @@ export const BooksProvider = ({ children }) => {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const sortBooks = () => {
+    setBooks(sortByTitle(books));
+  };
 
   const getBooks = async () => {
     await withAsync(
@@ -67,7 +72,15 @@ export const BooksProvider = ({ children }) => {
 
   return (
     <BooksContext.Provider
-      value={{ books, getBooks, addBooks, updateBook, deleteBook, loading }}
+      value={{
+        books,
+        sortBooks,
+        getBooks,
+        addBooks,
+        updateBook,
+        deleteBook,
+        loading,
+      }}
     >
       {children}
     </BooksContext.Provider>

@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Radio, Label, Utility } from "@visa/nova-react";
+import { useBooksContext } from "../context/booksContext";
 
 const RadioButtonGroup = ({ arr }) => {
   const [viewOption, setViewOption] = useState("none");
+  const { sortBooks } = useBooksContext();
+
+  const onChangeHandler = async (e) => {
+    setViewOption(e.target.value);
+
+    if (e.target.value === "sort") {
+      sortBooks();
+    }
+  };
 
   return (
     <div className="radio-btn-side-container">
@@ -17,7 +27,9 @@ const RadioButtonGroup = ({ arr }) => {
                 name="viewOption"
                 value={value}
                 checked={viewOption === value}
-                onChange={(e) => setViewOption(e.target.value)}
+                onChange={(e) => {
+                  onChangeHandler(e);
+                }}
               />
               <Label htmlFor={id}>{label}</Label>
             </Utility>
