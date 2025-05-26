@@ -32,6 +32,9 @@ const YEAR_ERROR_MESSAGE = "Year cannot exceed ";
 const SEARCH_BOOKS = "Search books";
 const SEARCH_PLACEHOLDER = "Type to search by title";
 const NO_ENTRIES_FOUND = "No entries found";
+const SORT_BY_TITLE = "Sort by title";
+const GROUP_BY_AUTHOR = "Sort by author";
+const GROUP_BY_GENRE = "Sort by genre";
 
 export {
   TITLE,
@@ -61,4 +64,7 @@ export {
   SEARCH_BOOKS,
   SEARCH_PLACEHOLDER,
   NO_ENTRIES_FOUND,
+  SORT_BY_TITLE,
+  GROUP_BY_AUTHOR,
+  GROUP_BY_GENRE,
 };
