@@ -35,6 +35,15 @@ const NO_ENTRIES_FOUND = "No entries found";
 const SORT_BY_TITLE = "Sort by title";
 const GROUP_BY_AUTHOR = "Sort by author";
 const GROUP_BY_GENRE = "Sort by genre";
+const RETURN = "Return";
+const SERVER_DOWN = "Server is down";
+const NOT_FOUND = "Not found";
+const BAD_REQUEST = "Bad Request";
+const SERVER_ERROR =
+  "Sorry, we couldn't connect to the server. Please try again later.";
+const BOOK_NOT_FOUND = "Book doesn't exists!";
+const SAME_AUTHOR_ERROR =
+  "Book with the same author already exists! Please create a new book";
 
 export {
   TITLE,
@@ -67,4 +76,11 @@ export {
   SORT_BY_TITLE,
   GROUP_BY_AUTHOR,
   GROUP_BY_GENRE,
+  RETURN,
+  SERVER_DOWN,
+  NOT_FOUND,
+  BAD_REQUEST,
+  SERVER_ERROR,
+  BOOK_NOT_FOUND,
+  SAME_AUTHOR_ERROR,
 };

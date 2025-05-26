@@ -1,3 +1,4 @@
+import React from "react";
 const ServerSVG = () => (
   <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
     <circle cx="60" cy="60" r="60" fill="#1434cb" opacity="0.08" />

@@ -1,19 +1,29 @@
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Typography, Utility } from "@visa/nova-react";
-import ServerSVG from "../assets/ServerError";
+import ServerSVG from "../../assets/ServerError";
+import {
+  RETURN,
+  SERVER_DOWN,
+  NOT_FOUND,
+  BAD_REQUEST,
+  SERVER_ERROR,
+  BOOK_NOT_FOUND,
+  SAME_AUTHOR_ERROR,
+} from "../../constants/string";
 
-const ServerErrorPage = () => {
+const Error = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
   const errorTitle = () => {
     switch (id) {
       case "500":
-        return "Server is down";
+        return SERVER_DOWN;
       case "404":
-        return "Not found!";
+        return NOT_FOUND;
       case "400":
-        return "Bad Request";
+        return BAD_REQUEST;
       default:
         return "";
     }
@@ -22,11 +32,11 @@ const ServerErrorPage = () => {
   const errorMessage = () => {
     switch (id) {
       case "500":
-        return "Sorry, we couldn't connect to the server. Please try again later.";
+        return SERVER_ERROR;
       case "404":
-        return "Book doesn't exists!";
+        return BOOK_NOT_FOUND;
       case "400":
-        return "Book with the same author already exists! Please create a new book";
+        return SAME_AUTHOR_ERROR;
       default:
         return "";
     }
@@ -34,6 +44,7 @@ const ServerErrorPage = () => {
 
   return (
     <div
+      aria-label="Error page"
       style={{
         minHeight: "100vh",
         width: "100vw",
@@ -52,21 +63,27 @@ const ServerErrorPage = () => {
         >
           {errorTitle()}
         </Typography>
-        <Typography variant="body-1" style={{ textAlign: "center" }}>
+        <Typography
+          variant="body-1"
+          style={{ textAlign: "center" }}
+          role="alert"
+          aria-live="assertive"
+        >
           {errorMessage()}
         </Typography>
         <Button
+          role="button"
           colorScheme="primary"
           onClick={() => {
             if (id === "500") navigate("/");
             else navigate("/get-all-books");
           }}
         >
-          Return
+          {RETURN}
         </Button>
       </Utility>
     </div>
   );
 };
 
-export default ServerErrorPage;
+export default Error;
