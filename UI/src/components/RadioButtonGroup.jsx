@@ -11,7 +11,7 @@ const RadioButtonGroup = ({ arr, viewOption, setViewOption }) => {
             <Utility key={id} vAlignItems="center" vFlex vGap={2}>
               <Radio
                 id={id}
-                name="viewOption"
+                name={`viewOption-${id}`}
                 value={value}
                 checked={viewOption === value}
                 onChange={(e) => {

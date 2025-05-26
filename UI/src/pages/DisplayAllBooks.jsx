@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { useBooksContext } from "../context/booksContext";
 import {
@@ -14,8 +14,8 @@ import NoBookFoundPage from "./NoBookFoundPage";
 import SearchBox from "../components/SearchBox";
 import RadioButtonGroup from "../components/RadioButtonGroup";
 import Cards from "../components/Cards";
+import { filterByGroup, filter } from "../utils/filter";
 import "../styles/DisplayAllBooks.css";
-import { filterByGroup, filterWithoutGroup } from "../utils/filter";
 
 const DisplayAllBooks = () => {
   const {
@@ -27,34 +27,31 @@ const DisplayAllBooks = () => {
     getBooksGroupedByGenre,
   } = useBooksContext();
   const [searchValue, setSearchValue] = useState("");
-  const [booksBySearch, setBooksBySearch] = useState({});
-  const [groupedBooksBySearch, setGroupedBooksBySearch] = useState({});
   const [viewOption, setViewOption] = useState("none");
-  const [groupedByData, setGroupedByData] = useState({});
   const location = useLocation();
 
-  let data = books;
-  let isGroupedBy = false;
+  const groupedData = useMemo(() => {
+    if (viewOption === "author") return getBooksGroupedByAuthor();
+    if (viewOption === "genre") return getBooksGroupedByGenre();
+    return {};
+  }, [viewOption, books]);
 
-  if (viewOption === "author" || viewOption === "genre") {
-    data =
-      Object.keys(groupedBooksBySearch).length > 0
-        ? groupedBooksBySearch
-        : groupedByData;
-    isGroupedBy = true;
-  } else if (searchValue) {
-    data = Object.keys(booksBySearch).length > 0 ? booksBySearch : books;
-  }
+  const filteredBooks = useMemo(() => {
+    return filter(books, searchValue);
+  }, [books, searchValue]);
 
-  const noEntriesFound = searchValue && Object.keys(booksBySearch).length === 0;
+  const filteredGroupedData = useMemo(() => {
+    return filterByGroup(groupedData, searchValue);
+  }, [groupedData, searchValue]);
+
+  const isGroupedBy = viewOption === "author" || viewOption === "genre";
+  const data = isGroupedBy ? filteredGroupedData : filteredBooks;
+
+  const noEntriesFound = searchValue && Object.keys(data).length === 0;
 
   useEffect(() => {
     if (viewOption === "sort") {
       sortBooks();
-    } else if (viewOption === "author") {
-      setGroupedByData(getBooksGroupedByAuthor());
-    } else if (viewOption === "genre") {
-      setGroupedByData(getBooksGroupedByGenre());
     }
   }, [viewOption]);
 
@@ -73,15 +70,10 @@ const DisplayAllBooks = () => {
 
   const onChangeHandler = (value) => {
     setSearchValue(value);
-
-    if (isGroupedBy) {
-      setGroupedBooksBySearch(filterByGroup(groupedByData, value));
-    } else setBooksBySearch(filterWithoutGroup(data, value));
   };
 
   const onClearHandler = () => {
     setSearchValue("");
-    setBooksBySearch({});
   };
 
   if (loading) return <LoadingPage />;
