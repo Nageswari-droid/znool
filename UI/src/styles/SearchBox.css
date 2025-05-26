@@ -19,3 +19,8 @@
   padding-left: 2rem;
   letter-spacing: 0.04em;
 }
+
+.radio-btn-side-container {
+  width: 100%;
+  padding: 2rem 2em 0 2rem;
+}

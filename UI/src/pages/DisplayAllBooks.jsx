@@ -16,7 +16,10 @@ import LoadingPage from "./LoadingPage";
 import NoBookFoundPage from "./NoBookFoundPage";
 import SearchBox from "../components/SearchBox";
 import Modal from "../components/Modal";
+import RadioButtonGroup from "../components/RadioButtonGroup";
 import "../styles/DisplayAllBooks.css";
+
+import { Radio, Label, Utility } from "@visa/nova-react";
 
 const DisplayAllBooks = () => {
   const { books, getBooks, deleteBook, loading } = useBooksContext();
@@ -25,6 +28,8 @@ const DisplayAllBooks = () => {
   const [bookToDelete, setBookToDelete] = useState(null);
   const [booksBySearch, setBooksBySearch] = useState({});
   const location = useLocation();
+
+  const [viewOption, setViewOption] = useState("none");
 
   let data = books;
   if (searchValue) {
@@ -118,6 +123,7 @@ const DisplayAllBooks = () => {
         {noEntriesFound && (
           <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
         )}
+        <RadioButtonGroup />
       </div>
       <main className="display-books-main" aria-label="All books main content">
         <section
