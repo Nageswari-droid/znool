@@ -13,24 +13,30 @@ import LoadingPage from "./LoadingPage";
 import NoBookFoundPage from "./NoBookFoundPage";
 import SearchBox from "../components/SearchBox";
 import RadioButtonGroup from "../components/RadioButtonGroup";
-import CardGroup from "../components/CardGroup";
+import Cards from "../components/Cards";
 import "../styles/DisplayAllBooks.css";
 
 const DisplayAllBooks = () => {
-  const { books, getBooks, loading, sortBooks, getBooksGroupedByAuthor } =
-    useBooksContext();
+  const {
+    books,
+    getBooks,
+    loading,
+    sortBooks,
+    getBooksGroupedByAuthor,
+    getBooksGroupedByGenre,
+  } = useBooksContext();
   const [searchValue, setSearchValue] = useState("");
   const [booksBySearch, setBooksBySearch] = useState({});
   const [viewOption, setViewOption] = useState("none");
-  const [groupedByAuthor, setGroupedByAuthor] = useState({});
+  const [groupedByData, setGroupedByData] = useState({});
   const location = useLocation();
 
   let data = books;
-  let groupBy = null;
+  let isGroupedBy = false;
 
-  if (viewOption === "author") {
-    data = groupedByAuthor;
-    groupBy = "author";
+  if (viewOption === "author" || viewOption === "genre") {
+    data = groupedByData;
+    isGroupedBy = true;
   } else if (searchValue) {
     data = Object.keys(booksBySearch).length > 0 ? booksBySearch : books;
   }
@@ -41,7 +47,9 @@ const DisplayAllBooks = () => {
     if (viewOption === "sort") {
       sortBooks();
     } else if (viewOption === "author") {
-      setGroupedByAuthor(getBooksGroupedByAuthor());
+      setGroupedByData(getBooksGroupedByAuthor());
+    } else if (viewOption === "genre") {
+      setGroupedByData(getBooksGroupedByGenre());
     }
   }, [viewOption]);
 
@@ -125,7 +133,7 @@ const DisplayAllBooks = () => {
           setViewOption={setViewOption}
         />
       </div>
-      <CardGroup data={data} groupBy={groupBy} />
+      <Cards data={data} isGroupedBy={isGroupedBy} />
     </div>
   );
 };

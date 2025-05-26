@@ -4,8 +4,9 @@ import { useBooksContext } from "../context/booksContext";
 import Card from "./Card";
 import Modal from "./Modal";
 import "../styles/DisplayAllBooks.css";
+import GroupedCard from "./GroupedCard";
 
-const CardGroup = ({ data, groupBy }) => {
+const Cards = ({ data, isGroupedBy }) => {
   const { deleteBook } = useBooksContext();
   const [modalOpen, setModalOpen] = useState(false);
   const [bookToDelete, setBookToDelete] = useState(null);
@@ -26,53 +27,24 @@ const CardGroup = ({ data, groupBy }) => {
     setModalOpen(true);
   };
 
-  if (groupBy === "author" && typeof Object.values(data)[0] === "object") {
+  if (isGroupedBy && typeof Object.values(data)[0] === "object") {
     return (
       <main className="display-books-main" aria-label="All books main content">
         <section
           className="display-books-section"
           aria-label="All books section"
         >
-          {Object.entries(data).map(([author, booksObj]) => (
-            <div
-              key={author}
-              className="author-group-section"
-              role="region"
-              aria-labelledby={`author-title-${author}`}
-            >
-              <h2
-                className="author-group-title"
-                id={`author-title-${author}`}
-                tabIndex={0}
-              >
-                {author}
-              </h2>
-              <div
-                className="books-grid"
-                role="list"
-                aria-label={`Books by ${author}`}
-                aria-labelledby={`author-title-${author}`}
-              >
-                {Object.entries(booksObj).map(([id, book]) => (
-                  <Card
-                    key={id}
-                    book={book}
-                    id={id}
-                    onDeleteHandler={handleDeleteClick}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-          {modalOpen && (
-            <Modal
-              title={MODAL_TITLE}
-              optionOne={CONFIRM}
-              optionTwo={CANCEL}
+          {Object.entries(data).map(([groupKey, booksObj]) => (
+            <GroupedCard
+              key={groupKey}
+              groupKey={groupKey}
+              booksObj={booksObj}
+              onDeleteHandler={handleDeleteClick}
+              modalOpen={modalOpen}
               handleCancelDelete={handleCancelDelete}
               handleConfirmDelete={handleConfirmDelete}
             />
-          )}
+          ))}
         </section>
       </main>
     );
@@ -105,4 +77,4 @@ const CardGroup = ({ data, groupBy }) => {
   );
 };
 
-export default CardGroup;
+export default Cards;
