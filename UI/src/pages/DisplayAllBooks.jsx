@@ -15,6 +15,7 @@ import SearchBox from "../components/SearchBox";
 import RadioButtonGroup from "../components/RadioButtonGroup";
 import Cards from "../components/Cards";
 import "../styles/DisplayAllBooks.css";
+import { filterByGroup, filterWithoutGroup } from "../utils/filter";
 
 const DisplayAllBooks = () => {
   const {
@@ -27,6 +28,7 @@ const DisplayAllBooks = () => {
   } = useBooksContext();
   const [searchValue, setSearchValue] = useState("");
   const [booksBySearch, setBooksBySearch] = useState({});
+  const [groupedBooksBySearch, setGroupedBooksBySearch] = useState({});
   const [viewOption, setViewOption] = useState("none");
   const [groupedByData, setGroupedByData] = useState({});
   const location = useLocation();
@@ -35,7 +37,10 @@ const DisplayAllBooks = () => {
   let isGroupedBy = false;
 
   if (viewOption === "author" || viewOption === "genre") {
-    data = groupedByData;
+    data =
+      Object.keys(groupedBooksBySearch).length > 0
+        ? groupedBooksBySearch
+        : groupedByData;
     isGroupedBy = true;
   } else if (searchValue) {
     data = Object.keys(booksBySearch).length > 0 ? booksBySearch : books;
@@ -68,15 +73,10 @@ const DisplayAllBooks = () => {
 
   const onChangeHandler = (value) => {
     setSearchValue(value);
-    let titleStartsWith = {};
 
-    Object.entries(books).forEach(([id, book]) => {
-      if (book.title.toLowerCase().startsWith(value.toLowerCase())) {
-        titleStartsWith[id] = book;
-      }
-    });
-
-    setBooksBySearch(titleStartsWith);
+    if (isGroupedBy) {
+      setGroupedBooksBySearch(filterByGroup(groupedByData, value));
+    } else setBooksBySearch(filterWithoutGroup(data, value));
   };
 
   const onClearHandler = () => {
