@@ -1,4 +1,6 @@
+import React from "react";
 import { Button } from "@visa/nova-react";
+import { useNavigate } from "react-router-dom";
 import {
   TITLE,
   WELCOME,
@@ -6,11 +8,10 @@ import {
   SUBTITLE,
   ADD_BOOK,
   DISPLAY_BOOKS,
-} from "../constants/string";
-import { useNavigate } from "react-router-dom";
-import "../styles/LandingPage.css";
+} from "../../constants/string";
+import "../../styles/Home.css";
 
-const LandingPage = () => {
+const Home = () => {
   const navigate = useNavigate();
 
   return (
@@ -45,4 +46,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Home;

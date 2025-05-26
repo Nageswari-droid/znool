@@ -51,6 +51,15 @@ describe("ErrorPage", () => {
     expect(screen.getByRole("button", { name: /return/i })).toBeInTheDocument();
   });
 
+  it("renders 500 error title and message as default value", () => {
+    renderWithRoute("/error/505");
+
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      /Sorry, we couldn't connect to the server. Please try again later./i
+    );
+    expect(screen.getByRole("button", { name: /return/i })).toBeInTheDocument();
+  });
+
   it("navigates to correct route on button click", () => {
     renderWithRoute("/error/500");
 

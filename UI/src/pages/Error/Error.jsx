@@ -25,7 +25,7 @@ const Error = () => {
       case "400":
         return BAD_REQUEST;
       default:
-        return "";
+        return SERVER_DOWN;
     }
   };
 
@@ -38,7 +38,7 @@ const Error = () => {
       case "400":
         return SAME_AUTHOR_ERROR;
       default:
-        return "";
+        return SERVER_ERROR;
     }
   };
 
