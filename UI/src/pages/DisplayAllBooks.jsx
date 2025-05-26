@@ -6,30 +6,20 @@ import {
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
   SEARCH_BOOKS,
-  CANCEL,
-  CONFIRM,
-  MODAL_TITLE,
   NO_ENTRIES_FOUND,
 } from "../constants/string";
-import Card from "../components/Card";
 import LoadingPage from "./LoadingPage";
 import NoBookFoundPage from "./NoBookFoundPage";
 import SearchBox from "../components/SearchBox";
-import Modal from "../components/Modal";
 import RadioButtonGroup from "../components/RadioButtonGroup";
+import CardGroup from "../components/CardGroup";
 import "../styles/DisplayAllBooks.css";
 
-import { Radio, Label, Utility } from "@visa/nova-react";
-
 const DisplayAllBooks = () => {
-  const { books, getBooks, deleteBook, loading } = useBooksContext();
+  const { books, getBooks, loading } = useBooksContext();
   const [searchValue, setSearchValue] = useState("");
-  const [modalOpen, setModalOpen] = useState(false);
-  const [bookToDelete, setBookToDelete] = useState(null);
   const [booksBySearch, setBooksBySearch] = useState({});
   const location = useLocation();
-
-  const [viewOption, setViewOption] = useState("none");
 
   let data = books;
   if (searchValue) {
@@ -67,22 +57,6 @@ const DisplayAllBooks = () => {
   const onClearHandler = () => {
     setSearchValue("");
     setBooksBySearch({});
-  };
-
-  const handleConfirmDelete = async () => {
-    await deleteBook(bookToDelete);
-    setModalOpen(false);
-    setBookToDelete(null);
-  };
-
-  const handleCancelDelete = () => {
-    setModalOpen(false);
-    setBookToDelete(null);
-  };
-
-  const handleDeleteClick = (id) => {
-    setBookToDelete(id);
-    setModalOpen(true);
   };
 
   if (loading) return <LoadingPage />;
@@ -125,32 +99,7 @@ const DisplayAllBooks = () => {
         )}
         <RadioButtonGroup />
       </div>
-      <main className="display-books-main" aria-label="All books main content">
-        <section
-          className="display-books-section"
-          aria-label="All books section"
-        >
-          <div className="books-grid" role="list" aria-label="Book list">
-            {Object.entries(data).map(([id, book]) => (
-              <Card
-                key={id}
-                book={book}
-                id={id}
-                onDeleteHandler={handleDeleteClick}
-              />
-            ))}
-            {modalOpen && (
-              <Modal
-                title={MODAL_TITLE}
-                optionOne={CONFIRM}
-                optionTwo={CANCEL}
-                handleCancelDelete={handleCancelDelete}
-                handleConfirmDelete={handleConfirmDelete}
-              />
-            )}
-          </div>
-        </section>
-      </main>
+      <CardGroup data={data} />
     </div>
   );
 };
