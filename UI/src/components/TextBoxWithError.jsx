@@ -68,10 +68,7 @@ const TextBoxWithError = ({
             aria-live="assertive"
             id={`${id}-message`}
             role="warning"
-            style={{
-              fontSize: "0.7rem",
-              color: "#C62F2F",
-            }}
+            className="textbox-error-message"
           >
             {errorMessage}
           </InputMessage>

@@ -91,6 +91,10 @@
   .no-book-found-content-title {
     font-size: 1rem;
   }
+
+  .add-update-book-page-outer {
+    min-height: 100vh;
+  }
 }
 
 @media (max-width: 570px) {
@@ -108,9 +112,10 @@
   .no-book-found-section {
     max-width: 98vw;
   }
+  
   .add-update-book-page-outer,
   .no-book-found-page-outer {
-    padding: 1rem 0;
+    padding: 3.8rem 0;
   }
 }
 

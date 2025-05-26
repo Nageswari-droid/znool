@@ -18,8 +18,21 @@ body,
 }
 
 .input-with-error-container,
+.input-text-area-container,
 .select-option-container {
   width: 60%;
+}
+
+.textbox-error-message {
+  font-size: 0.7rem;
+  color: #c62f2f;
+}
+
+.textarea-error-message {
+  color: rgb(33, 27, 51, 0.6);
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .multiple-action-btns {
@@ -51,6 +64,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 1000px) {
   .input-with-error-container,
+  .input-text-area-container,
   .select-option-container {
     width: 65%;
   }
@@ -58,8 +72,20 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 790px) {
   .input-with-error-container,
+  .input-text-area-container,
   .select-option-container {
     width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .textarea-error-message,
+  .textbox-error-message {
+    font-size: 0.5rem;
+  }
+
+  .input-container::placeholder {
+    font-size: 0.5rem;
   }
 }
 

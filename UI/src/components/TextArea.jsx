@@ -19,7 +19,7 @@ const TextArea = ({
       <Label htmlFor="input-book-description" className="book-form-label">
         {label}
       </Label>
-      <Utility style={{ width: "60%" }}>
+      <Utility className="input-text-area-container">
         <InputContainer className="v-flex-row input-container">
           <Textarea
             id="input-book-description"
@@ -33,16 +33,7 @@ const TextArea = ({
           />
         </InputContainer>
         {helperText && (
-          <div
-            style={{
-              color: "rgb(33, 27, 51, 0.6)",
-              fontSize: "0.7rem",
-              marginBottom: "0.5rem",
-              width: "100%",
-            }}
-          >
-            {helperText}
-          </div>
+          <div className="textarea-error-message">{helperText}</div>
         )}
       </Utility>
     </Utility>

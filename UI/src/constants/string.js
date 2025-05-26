@@ -16,7 +16,7 @@ const MODAL_TITLE = "Are you sure you want to delete?";
 const CONFIRM = "Confirm";
 const CANCEL = "Cancel";
 const INPUT_DESCRIPTION = "Description";
-const INPUT_DESCRIPTION_PLACEHOLDER = "Enter book description (Optional)";
+const INPUT_DESCRIPTION_PLACEHOLDER = "Enter book description";
 const EDIT_WITHOUT_BOOK_TITLE = "No book selected!";
 const EDIT_WITHOUT_BOOK_SUBTITLE_ONE =
   "Your library is empty or no book is currently selected.";
