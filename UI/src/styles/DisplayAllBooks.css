@@ -218,6 +218,12 @@
   .card-description {
     height: auto;
   }
+
+  .no-entries-found-message {
+    font-size: 0.8rem;
+    margin-top: 0;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 500px) {
@@ -228,5 +234,11 @@
 
   .search-box-label {
     display: none;
+  }
+
+  .no-entries-found-message {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding-left: 0;
   }
 }

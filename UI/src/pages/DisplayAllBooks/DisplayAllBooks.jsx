@@ -121,10 +121,8 @@ const DisplayAllBooks = () => {
           value={searchValue}
           onChangeHandler={onChangeHandler}
           onClearHandler={onClearHandler}
+          noEntriesFound={noEntriesFound}
         />
-        {noEntriesFound && (
-          <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
-        )}
         <RadioButtonGroup
           arr={radioBtnsSideBar}
           viewOption={viewOption}

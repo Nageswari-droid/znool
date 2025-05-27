@@ -12,7 +12,7 @@ import {
   Label,
 } from "@visa/nova-react";
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
-import { SEARCH_PLACEHOLDER } from "../../constants/string";
+import { SEARCH_PLACEHOLDER, NO_ENTRIES_FOUND } from "../../constants/string";
 
 /**
  * SearchBox component for searching books by title or other criteria.
@@ -24,7 +24,13 @@ import { SEARCH_PLACEHOLDER } from "../../constants/string";
  * @param {Function} props.onClearHandler - Handler to clear the search value
  * @returns {JSX.Element}
  */
-const SearchBox = ({ label, value, onChangeHandler, onClearHandler }) => {
+const SearchBox = ({
+  label,
+  value,
+  onChangeHandler,
+  onClearHandler,
+  noEntriesFound,
+}) => {
   return (
     <Utility className="search-box-wrapper">
       <Label htmlFor="search-books-input" className="search-box-label">
@@ -54,6 +60,9 @@ const SearchBox = ({ label, value, onChangeHandler, onClearHandler }) => {
           </Button>
         )}
       </InputContainer>
+      {noEntriesFound && (
+        <div className="no-entries-found-message">{NO_ENTRIES_FOUND}</div>
+      )}
     </Utility>
   );
 };
