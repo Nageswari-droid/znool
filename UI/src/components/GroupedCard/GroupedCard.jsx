@@ -1,6 +1,7 @@
-import Card from "./Card";
-import Modal from "./Modal";
-import { CANCEL, CONFIRM, MODAL_TITLE } from "../constants/string";
+import React from "react";
+import Card from "../Card/Card";
+import Modal from "../Modal/Modal";
+import { CANCEL, CONFIRM, MODAL_TITLE } from "../../constants/string";
 
 const GroupedCard = ({
   groupKey,

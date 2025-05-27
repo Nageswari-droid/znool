@@ -10,11 +10,11 @@ import {
   NO_ENTRIES_FOUND,
 } from "../../constants/string";
 import { radioBtnsSideBar } from "../../constants/radioBtns";
-import Loading from "../../components/Loading";
-import NoBookFound from "../../components/NoBookFound";
-import SearchBox from "../../components/SearchBox";
-import RadioButtonGroup from "../../components/RadioButtonGroup";
-import Cards from "../../components/Cards";
+import Loading from "../../components/Loading/Loading";
+import NoBookFound from "../../components/NoBookFound/NoBookFound";
+import SearchBox from "../../components/SearchBox/SearchBox";
+import RadioButtonGroup from "../../components/RadioButtonGroup/RadioButtonGroup";
+import Cards from "../../components/Cards/Cards";
 import { filterByGroup, filter } from "../../utils/filter";
 import "../../styles/DisplayAllBooks.css";
 

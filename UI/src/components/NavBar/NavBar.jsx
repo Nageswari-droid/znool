@@ -1,7 +1,8 @@
+import React from "react";
 import { Button } from "@visa/nova-react";
-import { ADD_BOOK, TITLE } from "../constants/string";
+import { ADD_BOOK, TITLE } from "../../constants/string";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../styles/NavBar.css";
+import "../../styles/NavBar.css";
 
 const NavBar = () => {
   const navigate = useNavigate();

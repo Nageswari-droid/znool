@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Button,
   ContentCard,
@@ -8,7 +9,7 @@ import {
   Utility,
 } from "@visa/nova-react";
 import { useNavigate } from "react-router-dom";
-import { DELETE, EDIT, YEAR } from "../constants/string";
+import { DELETE, EDIT, YEAR } from "../../constants/string";
 
 const Card = ({ book, id, onDeleteHandler }) => {
   const naviagte = useNavigate();

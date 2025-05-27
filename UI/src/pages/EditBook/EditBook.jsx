@@ -8,8 +8,8 @@ import {
   UPDATE_BOOK,
 } from "../../constants/string";
 import BookForm from "../../components/BookForm/BookForm";
-import Loading from "../../components/Loading";
-import NoBookFound from "../../components/NoBookFound";
+import Loading from "../../components/Loading/Loading";
+import NoBookFound from "../../components/NoBookFound/NoBookFound";
 
 const EditBook = () => {
   const navigate = useNavigate();

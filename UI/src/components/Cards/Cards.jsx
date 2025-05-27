@@ -1,10 +1,11 @@
+import React from "react";
 import { useState } from "react";
-import { CANCEL, CONFIRM, MODAL_TITLE } from "../constants/string";
-import { useBooksContext } from "../context/booksContext";
-import Card from "./Card";
-import Modal from "./Modal";
-import "../styles/DisplayAllBooks.css";
-import GroupedCard from "./GroupedCard";
+import { CANCEL, CONFIRM, MODAL_TITLE } from "../../constants/string";
+import { useBooksContext } from "../../context/booksContext";
+import Card from "../Card/Card";
+import Modal from "../Modal/Modal";
+import GroupedCard from "../GroupedCard/GroupedCard";
+import "../../styles/DisplayAllBooks.css";
 
 const Cards = ({ data, isGroupedBy }) => {
   const { deleteBook } = useBooksContext();

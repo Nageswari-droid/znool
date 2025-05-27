@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Input,
   InputContainer,
@@ -6,15 +7,12 @@ import {
   Label,
 } from "@visa/nova-react";
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
-import { SEARCH_PLACEHOLDER } from "../constants/string";
+import { SEARCH_PLACEHOLDER } from "../../constants/string";
 
 const SearchBox = ({ label, value, onChangeHandler, onClearHandler }) => {
   return (
     <Utility className="search-box-wrapper">
-      <Label
-        htmlFor="search-books-input"
-        className="search-box-label"
-      >
+      <Label htmlFor="search-books-input" className="search-box-label">
         {label}
       </Label>
       <InputContainer>

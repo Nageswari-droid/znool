@@ -9,7 +9,7 @@ jest.mock("../DisplayAllBooks/DisplayAllBooks", () => (
   <div data-testid="display-all-books">Display all books!</div>
 ));
 
-jest.mock("../../components/BookForm", () => (props) => (
+jest.mock("../../components/BookForm/BookForm", () => (props) => (
   <form
     onSubmit={(e) => {
       e.preventDefault();

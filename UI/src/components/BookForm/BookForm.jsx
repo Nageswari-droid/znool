@@ -10,10 +10,10 @@ import {
 } from "../../constants/string";
 import { MAXIMUM_CHARACTERS } from "../../constants/characterLimit";
 import GENRES from "../../constants/genres";
-import SelectBox from "../SelectBox";
-import TextArea from "../TextArea";
+import SelectBox from "../SelectBox/SelectBox";
+import TextArea from "../TextArea/TextArea";
 import "../../styles/BookPages.css";
-import TextBoxWithError from "../TextBoxWithError";
+import TextBoxWithError from "../TextBoxWithError/TextBoxWithError";
 
 const getCurrentYear = () => new Date().getFullYear();
 

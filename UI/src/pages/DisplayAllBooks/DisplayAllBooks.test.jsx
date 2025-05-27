@@ -5,7 +5,7 @@ import * as booksContextModule from "../../context/booksContext";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock("../../components/SearchBox", () => (props) => (
+jest.mock("../../components/SearchBox/SearchBox", () => (props) => (
   <div>
     <input
       aria-label="Search books"
@@ -24,30 +24,34 @@ jest.mock("../../components/SearchBox", () => (props) => (
   </div>
 ));
 
-jest.mock("../../components/RadioButtonGroup", () => (props) => (
-  <div>
-    <button
-      aria-label="Sort by title"
-      onClick={() => props.setViewOption("sort")}
-    >
-      Sort by title
-    </button>
-    <button
-      aria-label="Group by author"
-      onClick={() => props.setViewOption("author")}
-    >
-      Group by author
-    </button>
-    <button
-      aria-label="Group by genre"
-      onClick={() => props.setViewOption("genre")}
-    >
-      Group by genre
-    </button>
-  </div>
-));
+jest.mock(
+  "../../components/RadioButtonGroup/RadioButtonGroup",
+  () => (props) =>
+    (
+      <div>
+        <button
+          aria-label="Sort by title"
+          onClick={() => props.setViewOption("sort")}
+        >
+          Sort by title
+        </button>
+        <button
+          aria-label="Group by author"
+          onClick={() => props.setViewOption("author")}
+        >
+          Group by author
+        </button>
+        <button
+          aria-label="Group by genre"
+          onClick={() => props.setViewOption("genre")}
+        >
+          Group by genre
+        </button>
+      </div>
+    )
+);
 
-jest.mock("../../components/Cards", () => () => <div>Cards Area</div>);
+jest.mock("../../components/Cards/Cards", () => () => <div>Cards Area</div>);
 
 describe("DisplayAllBooks", () => {
   beforeEach(() => {

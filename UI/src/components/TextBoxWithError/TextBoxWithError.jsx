@@ -8,7 +8,7 @@ import {
   InputMessage,
 } from "@visa/nova-react";
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
-import { MAXIMUM_CHARACTERS } from "../constants/characterLimit";
+import { MAXIMUM_CHARACTERS } from "../../constants/characterLimit";
 
 const TextBoxWithError = ({
   type,

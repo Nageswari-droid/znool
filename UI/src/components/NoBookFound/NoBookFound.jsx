@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Typography, Utility } from "@visa/nova-react";
 import { useNavigate } from "react-router-dom";
-import { ADD_BOOK, DISPLAY_BOOKS } from "../constants/string";
-import "../styles/BookPages.css";
+import { ADD_BOOK, DISPLAY_BOOKS } from "../../constants/string";
+import "../../styles/BookPages.css";
 
 const NoBookFound = ({
   title,

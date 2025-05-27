@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useBooksContext } from "../../context/booksContext";
 import { ADD_BOOK } from "../../constants/string";
 import BookForm from "../../components/BookForm/BookForm";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 
 const AddNewBook = () => {
   const navigate = useNavigate();

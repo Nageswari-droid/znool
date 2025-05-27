@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Typography, Utility } from "@visa/nova-react";
 
 const Modal = ({
