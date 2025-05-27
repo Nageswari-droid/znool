@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useBooksContext } from "../../context/booksContext";
 import { ADD_BOOK } from "../../constants/string";
-import BookForm from "../../components/BookForm";
+import BookForm from "../../components/BookForm/BookForm";
 import Loading from "../../components/Loading";
 
 const AddNewBook = () => {

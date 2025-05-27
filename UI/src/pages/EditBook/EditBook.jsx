@@ -7,7 +7,7 @@ import {
   EDIT_WITHOUT_BOOK_TITLE,
   UPDATE_BOOK,
 } from "../../constants/string";
-import BookForm from "../../components/BookForm";
+import BookForm from "../../components/BookForm/BookForm";
 import Loading from "../../components/Loading";
 import NoBookFound from "../../components/NoBookFound";
 
