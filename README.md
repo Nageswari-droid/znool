@@ -7,7 +7,7 @@ Znool is a full-stack library management system that allows users to add, update
 ### 🔄 Clone the Repository
 
 ```bash
-git clone https://github.com/Nageswari-droid/znool.git
+git clone git@github.com:Nageswari-droid/znool.git
 cd znool
 ```
 
