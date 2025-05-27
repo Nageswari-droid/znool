@@ -12,7 +12,6 @@ import {
   GET_WITHOUT_BOOK_SUBTITLE_ONE,
   GET_WITHOUT_BOOK_SUBTITLE_TWO,
   SEARCH_BOOKS,
-  NO_ENTRIES_FOUND,
 } from "../../constants/string";
 import { radioBtnsSideBar } from "../../constants/radioBtns";
 import Loading from "../../components/Loading/Loading";
