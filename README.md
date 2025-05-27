@@ -124,3 +124,15 @@ The React application contains 5 major sections:
 ### ✅ Frontend Tests
 
 Unit tests are colocated inside component folders using React Testing Library and Jest.
+
+
+<div align="center">
+<p align="center">
+<video width="400" alt="login" src="https://github.com/user-attachments/assets/c296b780-e321-4e21-834c-3f917ac5b1fa" style="text-align:center;" />
+</p>
+</div>
+
+
+
+
+
