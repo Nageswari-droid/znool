@@ -9,9 +9,9 @@
  * @returns {Object} Sorted book data by title
  */
 const sortByTitle = (data) => {
-    return Object.fromEntries(
-        Object.entries(data).sort(([, a], [, b]) => a.title.localeCompare(b.title))
-    );
+  return Object.fromEntries(
+    Object.entries(data).sort(([, a], [, b]) => a.title.localeCompare(b.title))
+  );
 };
 
 /**
@@ -21,9 +21,9 @@ const sortByTitle = (data) => {
  * @returns {Object} Sorted grouped data by group key
  */
 const sortGroup = (data) => {
-    return Object.fromEntries(
-        Object.entries(data).sort(([a], [b]) => a.localeCompare(b))
-    );
+  return Object.fromEntries(
+    Object.entries(data).sort(([a], [b]) => a.localeCompare(b))
+  );
 };
 
 /**
@@ -33,14 +33,14 @@ const sortGroup = (data) => {
  * @returns {Object} Grouped and sorted book data by genre
  */
 const groupByGenre = (data) => {
-    let genres = {};
+  let genres = {};
 
-    for (const [id, value] of Object.entries(data)) {
-        if (!genres[value.genre]) genres[value.genre] = {};
-        genres[value.genre][id] = value;
-    }
+  for (const [id, value] of Object.entries(data)) {
+    if (!genres[value.genre]) genres[value.genre] = {};
+    genres[value.genre][id] = value;
+  }
 
-    return sortGroup(genres);
+  return sortGroup(genres);
 };
 
 /**
@@ -50,14 +50,14 @@ const groupByGenre = (data) => {
  * @returns {Object} Grouped and sorted book data by author
  */
 const groupByAuthor = (data) => {
-    let authors = {};
+  let authors = {};
 
-    for (const [id, value] of Object.entries(data)) {
-        if (!authors[value.author]) authors[value.author] = {};
-        authors[value.author][id] = value;
-    }
+  for (const [id, value] of Object.entries(data)) {
+    if (!authors[value.author]) authors[value.author] = {};
+    authors[value.author][id] = value;
+  }
 
-    return sortGroup(authors);
+  return sortGroup(authors);
 };
 
 export { sortByTitle, groupByGenre, groupByAuthor };

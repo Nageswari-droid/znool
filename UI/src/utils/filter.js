@@ -10,18 +10,18 @@
  * @returns {Object} Filtered grouped book data
  */
 const filterByGroup = (data, value) => {
-    if (!value) return data;
+  if (!value) return data;
 
-    let filtered = {};
-    Object.entries(data).forEach(([key, books]) => {
-        let result = filter(books, value);
+  let filtered = {};
+  Object.entries(data).forEach(([key, books]) => {
+    let result = filter(books, value);
 
-        if (Object.keys(result).length > 0) {
-            filtered[key] = result;
-        }
-    });
+    if (Object.keys(result).length > 0) {
+      filtered[key] = result;
+    }
+  });
 
-    return filtered;
+  return filtered;
 };
 
 /**
@@ -32,16 +32,16 @@ const filterByGroup = (data, value) => {
  * @returns {Object} Filtered book data
  */
 const filter = (data, value) => {
-    if (!value) return data;
+  if (!value) return data;
 
-    let filtered = {};
-    Object.entries(data).forEach(([id, book]) => {
-        if (book.title.toLowerCase().startsWith(value.toLowerCase())) {
-            filtered[id] = book;
-        }
-    });
+  let filtered = {};
+  Object.entries(data).forEach(([id, book]) => {
+    if (book.title.toLowerCase().startsWith(value.toLowerCase())) {
+      filtered[id] = book;
+    }
+  });
 
-    return filtered;
+  return filtered;
 };
 
 export { filterByGroup, filter };
