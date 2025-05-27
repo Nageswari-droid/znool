@@ -14,7 +14,7 @@ cd znool
 ### 🖥️ Frontend Setup
 
 ```bash
-cd client
+cd UI
 npm install
 npm run dev
 ```
@@ -22,7 +22,7 @@ npm run dev
 ### 🛠️ Backend Setup
 
 ```bash
-cd server
+cd Server
 npm install
 npm start
 ```
