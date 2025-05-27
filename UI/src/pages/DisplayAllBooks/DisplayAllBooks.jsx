@@ -47,10 +47,14 @@ const DisplayAllBooks = () => {
     return {};
   }, [viewOption, books]);
 
-  // Memoized filtered books (flat)
+  // Memoized filtered books
   const filteredBooks = useMemo(() => {
+    if (viewOption === "sort") {
+      return filter(sortBooks(), searchValue);
+    }
+
     return filter(books, searchValue);
-  }, [books, searchValue]);
+  }, [books, searchValue, viewOption, sortBooks]);
 
   // Memoized filtered grouped data
   const filteredGroupedData = useMemo(() => {
@@ -61,13 +65,6 @@ const DisplayAllBooks = () => {
   const data = isGroupedBy ? filteredGroupedData : filteredBooks;
 
   const noEntriesFound = searchValue && Object.keys(data).length === 0;
-
-  // Sort books if view option is 'sort'
-  useEffect(() => {
-    if (viewOption === "sort") {
-      sortBooks();
-    }
-  }, [viewOption]);
 
   // Fetch books on mount or refresh
   useEffect(() => {

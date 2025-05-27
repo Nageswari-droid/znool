@@ -40,10 +40,11 @@ export const BooksProvider = ({ children }) => {
   const navigate = useNavigate();
 
   /**
-   * Sorts the books state by title.
+   * Returns books sorted by title (does not update state).
+   * @returns {Object} Sorted books by title
    */
   const sortBooks = () => {
-    setBooks(sortByTitle(books));
+    return sortByTitle(books);
   };
 
   /**
