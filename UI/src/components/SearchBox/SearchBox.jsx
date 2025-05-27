@@ -1,3 +1,8 @@
+/**
+ * SearchBox component for searching books by title or other criteria.
+ *
+ * Provides a text input with a clear button for searching books.
+ */
 import React from "react";
 import {
   Input,
@@ -9,6 +14,16 @@ import {
 import { VisaClearAltTiny } from "@visa/nova-icons-react";
 import { SEARCH_PLACEHOLDER } from "../../constants/string";
 
+/**
+ * SearchBox component for searching books by title or other criteria.
+ * @component
+ * @param {Object} props
+ * @param {string} props.label - Label for the search box
+ * @param {string} props.value - Current search value
+ * @param {Function} props.onChangeHandler - Handler for search value change
+ * @param {Function} props.onClearHandler - Handler to clear the search value
+ * @returns {JSX.Element}
+ */
 const SearchBox = ({ label, value, onChangeHandler, onClearHandler }) => {
   return (
     <Utility className="search-box-wrapper">

@@ -1,3 +1,8 @@
+/**
+ * Cards component for displaying a grid of book cards or grouped cards.
+ *
+ * Handles both grouped and ungrouped book data, and manages the delete modal.
+ */
 import React from "react";
 import { useState } from "react";
 import { CANCEL, CONFIRM, MODAL_TITLE } from "../../constants/string";
@@ -7,22 +12,40 @@ import Modal from "../Modal/Modal";
 import GroupedCard from "../GroupedCard/GroupedCard";
 import "../../styles/DisplayAllBooks.css";
 
+/**
+ * Cards component for displaying a grid of book cards or grouped cards.
+ * @component
+ * @param {Object} props
+ * @param {Object} props.data - Book data (flat or grouped)
+ * @param {boolean} props.isGroupedBy - Whether the data is grouped
+ * @returns {JSX.Element}
+ */
 const Cards = ({ data, isGroupedBy }) => {
   const { deleteBook } = useBooksContext();
   const [modalOpen, setModalOpen] = useState(false);
   const [bookToDelete, setBookToDelete] = useState(null);
 
+  /**
+   * Confirms deletion of a book.
+   */
   const handleConfirmDelete = async () => {
     await deleteBook(bookToDelete);
     setModalOpen(false);
     setBookToDelete(null);
   };
 
+  /**
+   * Cancels the delete action.
+   */
   const handleCancelDelete = () => {
     setModalOpen(false);
     setBookToDelete(null);
   };
 
+  /**
+   * Opens the delete modal for a specific book.
+   * @param {string} id - Book ID to delete
+   */
   const handleDeleteClick = (id) => {
     setBookToDelete(id);
     setModalOpen(true);

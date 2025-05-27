@@ -1,3 +1,8 @@
+/**
+ * Card component for displaying a single book's details and actions.
+ *
+ * Shows book title, author, year, genre, description, and provides edit/delete actions.
+ */
 import React from "react";
 import {
   Button,
@@ -11,6 +16,15 @@ import {
 import { useNavigate } from "react-router-dom";
 import { DELETE, EDIT, YEAR } from "../../constants/string";
 
+/**
+ * Card component for displaying a single book's details and actions.
+ * @component
+ * @param {Object} props
+ * @param {Object} props.book - Book object containing title, author, year, genre, description
+ * @param {string} props.id - Book ID
+ * @param {Function} props.onDeleteHandler - Handler for delete action
+ * @returns {JSX.Element}
+ */
 const Card = ({ book, id, onDeleteHandler }) => {
   const naviagte = useNavigate();
 
@@ -30,10 +44,7 @@ const Card = ({ book, id, onDeleteHandler }) => {
           {YEAR} {book.year} <br />
           {book.genre}
         </Typography>
-        <Typography
-          className="v-pt-4 card-description"
-          variant="body-2"
-        >
+        <Typography className="v-pt-4 card-description" variant="body-2">
           {book.description}
         </Typography>
         <div style={{ flexGrow: 1 }} />

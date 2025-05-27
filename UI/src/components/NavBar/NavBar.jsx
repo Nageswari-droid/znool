@@ -1,9 +1,19 @@
+/**
+ * NavBar component for the application navigation bar.
+ *
+ * Displays the app title and an add book button (except on add or error pages).
+ */
 import React from "react";
 import { Button } from "@visa/nova-react";
 import { ADD_BOOK, TITLE } from "../../constants/string";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../../styles/NavBar.css";
 
+/**
+ * NavBar component for the application navigation bar.
+ * @component
+ * @returns {JSX.Element}
+ */
 const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();

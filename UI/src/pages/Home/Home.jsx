@@ -1,3 +1,8 @@
+/**
+ * Home page component for the library management system.
+ *
+ * Provides navigation to add a new book or display all books.
+ */
 import React from "react";
 import { Button } from "@visa/nova-react";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +16,11 @@ import {
 } from "../../constants/string";
 import "../../styles/Home.css";
 
+/**
+ * Home page for the library management system.
+ * @component
+ * @returns {JSX.Element}
+ */
 const Home = () => {
   const navigate = useNavigate();
 

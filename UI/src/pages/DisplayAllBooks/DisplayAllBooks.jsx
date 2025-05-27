@@ -1,3 +1,8 @@
+/**
+ * Page component for displaying all books with search, grouping, and sorting features.
+ *
+ * Allows users to search, group (by author/genre), and sort books. Handles loading and empty states.
+ */
 import React from "react";
 import { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
@@ -18,6 +23,11 @@ import Cards from "../../components/Cards/Cards";
 import { filterByGroup, filter } from "../../utils/filter";
 import "../../styles/DisplayAllBooks.css";
 
+/**
+ * Displays all books with search, grouping, and sorting options.
+ * @component
+ * @returns {JSX.Element}
+ */
 const DisplayAllBooks = () => {
   const {
     books,
@@ -31,16 +41,19 @@ const DisplayAllBooks = () => {
   const [viewOption, setViewOption] = useState("none");
   const location = useLocation();
 
+  // Memoized grouped data based on view option
   const groupedData = useMemo(() => {
     if (viewOption === "author") return getBooksGroupedByAuthor();
     if (viewOption === "genre") return getBooksGroupedByGenre();
     return {};
   }, [viewOption, books]);
 
+  // Memoized filtered books (flat)
   const filteredBooks = useMemo(() => {
     return filter(books, searchValue);
   }, [books, searchValue]);
 
+  // Memoized filtered grouped data
   const filteredGroupedData = useMemo(() => {
     return filterByGroup(groupedData, searchValue);
   }, [groupedData, searchValue]);
@@ -50,12 +63,14 @@ const DisplayAllBooks = () => {
 
   const noEntriesFound = searchValue && Object.keys(data).length === 0;
 
+  // Sort books if view option is 'sort'
   useEffect(() => {
     if (viewOption === "sort") {
       sortBooks();
     }
   }, [viewOption]);
 
+  // Fetch books on mount or refresh
   useEffect(() => {
     const fetchBooks = async () => {
       if (
@@ -69,10 +84,17 @@ const DisplayAllBooks = () => {
     fetchBooks();
   }, [location.state]);
 
+  /**
+   * Handles search box value change.
+   * @param {string} value - The new search value
+   */
   const onChangeHandler = (value) => {
     setSearchValue(value);
   };
 
+  /**
+   * Clears the search box value.
+   */
   const onClearHandler = () => {
     setSearchValue("");
   };

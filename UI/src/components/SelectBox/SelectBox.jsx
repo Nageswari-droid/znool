@@ -1,3 +1,8 @@
+/**
+ * SelectBox component for selecting a genre from a dropdown.
+ *
+ * Provides a dropdown select input for choosing a genre.
+ */
 import React from "react";
 import { VisaChevronDownTiny } from "@visa/nova-icons-react";
 import {
@@ -8,6 +13,17 @@ import {
   Utility,
 } from "@visa/nova-react";
 
+/**
+ * SelectBox component for selecting a genre from a dropdown.
+ * @component
+ * @param {Object} props
+ * @param {string} props.id - ID for the select input
+ * @param {string} props.label - Label for the select input
+ * @param {string} props.value - Current selected value
+ * @param {Array<string>} props.options - Array of genre options
+ * @param {Function} props.onChangeHandler - Handler for value change
+ * @returns {JSX.Element}
+ */
 const SelectBox = ({ id, label, value, options, onChangeHandler }) => {
   return (
     <Utility

@@ -1,3 +1,8 @@
+/**
+ * BookForm component for adding or editing a book.
+ *
+ * Provides a form with fields for title, author, year, genre, and description, including validation and clear functionality.
+ */
 import React from "react";
 import { useState } from "react";
 import { Button } from "@visa/nova-react";
@@ -15,8 +20,21 @@ import TextArea from "../TextArea/TextArea";
 import "../../styles/BookPages.css";
 import TextBoxWithError from "../TextBoxWithError/TextBoxWithError";
 
+/**
+ * Returns the current year as a number.
+ * @returns {number}
+ */
 const getCurrentYear = () => new Date().getFullYear();
 
+/**
+ * BookForm component for adding or editing a book.
+ * @component
+ * @param {Object} props
+ * @param {Object} [props.initialValue={}] - Initial values for the form fields
+ * @param {Function} props.onSubmitHandler - Handler for form submission
+ * @param {string} props.submitLabel - Label for the submit button
+ * @returns {JSX.Element}
+ */
 export default function BookForm({
   initialValue = {},
   onSubmitHandler,
@@ -31,14 +49,26 @@ export default function BookForm({
   );
   const [yearError, setYearError] = useState("");
 
+  /**
+   * Handles title input change.
+   * @param {string} updatedTitle
+   */
   const titleHandler = (updatedTitle) => {
     setTitle(updatedTitle);
   };
 
+  /**
+   * Handles author input change.
+   * @param {string} updatedAuthor
+   */
   const authorHandler = (updatedAuthor) => {
     setAuthor(updatedAuthor);
   };
 
+  /**
+   * Handles year input change and validates it.
+   * @param {string} updatedYear
+   */
   const yearHandler = (updatedYear) => {
     let yearValue = updatedYear;
 
@@ -57,15 +87,27 @@ export default function BookForm({
     setYear(yearValue);
   };
 
+  /**
+   * Handles genre input change.
+   * @param {string} updatedGenre
+   */
   const genreHandler = (updatedGenre) => {
     setGenre(updatedGenre);
   };
 
+  /**
+   * Handles description input change and truncates to max length.
+   * @param {string} updatedDescription
+   */
   const descriptionHandler = (updatedDescription) => {
     const truncated = updatedDescription.slice(0, MAXIMUM_CHARACTERS);
     setDescription(truncated);
   };
 
+  /**
+   * Clears all form fields.
+   * @param {Event} e
+   */
   const onClearHandler = (e) => {
     e.preventDefault();
     setTitle("");
@@ -76,6 +118,10 @@ export default function BookForm({
     setYearError("");
   };
 
+  /**
+   * Checks if the submit button should be disabled based on validation.
+   * @returns {boolean}
+   */
   const isSubmitBtnDisabled = () => {
     return (
       !title ||

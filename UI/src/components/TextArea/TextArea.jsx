@@ -1,6 +1,22 @@
+/**
+ * TextArea component for multiline text input (e.g., book description).
+ *
+ * Provides a textarea input with optional helper text.
+ */
 import React from "react";
 import { InputContainer, Label, Textarea, Utility } from "@visa/nova-react";
 
+/**
+ * TextArea component for multiline text input (e.g., book description).
+ * @component
+ * @param {Object} props
+ * @param {string} props.label - Label for the textarea
+ * @param {string} props.value - Value of the textarea
+ * @param {string} props.placeholder - Placeholder text
+ * @param {Function} props.onChangeHandler - Handler for value change
+ * @param {string} [props.helperText] - Optional helper or error text
+ * @returns {JSX.Element}
+ */
 const TextArea = ({
   label,
   value,

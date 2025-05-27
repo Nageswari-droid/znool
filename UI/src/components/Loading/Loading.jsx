@@ -1,3 +1,8 @@
+/**
+ * Loading component for displaying a full-screen loading indicator.
+ *
+ * Shows a centered progress bar and label while loading.
+ */
 import React from "react";
 import {
   ProgressLabel,
@@ -8,6 +13,11 @@ import {
 
 const id = "indeterminate-linear-progress";
 
+/**
+ * Loading component for displaying a full-screen loading indicator.
+ * @component
+ * @returns {JSX.Element}
+ */
 const Loading = () => (
   <div
     style={{

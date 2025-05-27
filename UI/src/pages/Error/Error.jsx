@@ -1,3 +1,8 @@
+/**
+ * Page component for displaying error messages based on error type.
+ *
+ * Shows different messages and actions for 400, 404, and 500 errors.
+ */
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Typography, Utility } from "@visa/nova-react";
@@ -12,10 +17,19 @@ import {
   SAME_AUTHOR_ERROR,
 } from "../../constants/string";
 
+/**
+ * Error page for displaying error messages based on error code.
+ * @component
+ * @returns {JSX.Element}
+ */
 const Error = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
+  /**
+   * Returns the error title based on error code.
+   * @returns {string}
+   */
   const errorTitle = () => {
     switch (id) {
       case "500":
@@ -29,6 +43,10 @@ const Error = () => {
     }
   };
 
+  /**
+   * Returns the error message based on error code.
+   * @returns {string}
+   */
   const errorMessage = () => {
     switch (id) {
       case "500":

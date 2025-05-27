@@ -1,9 +1,25 @@
+/**
+ * NoBookFound component for displaying a message and actions when no books are found.
+ *
+ * Shows a message and provides buttons to add a new book or display all books.
+ */
 import React from "react";
 import { Button, Typography, Utility } from "@visa/nova-react";
 import { useNavigate } from "react-router-dom";
 import { ADD_BOOK, DISPLAY_BOOKS } from "../../constants/string";
 import "../../styles/BookPages.css";
 
+/**
+ * NoBookFound component for displaying a message and actions when no books are found.
+ * @component
+ * @param {Object} props
+ * @param {string} props.title - Main title message
+ * @param {string} props.subtitleOne - First subtitle message
+ * @param {string} props.subtitleTwo - Second subtitle message
+ * @param {boolean} props.isAddBtnRequired - Whether to show the add book button
+ * @param {boolean} [props.isGetBooksBtnRequired=false] - Whether to show the display books button
+ * @returns {JSX.Element}
+ */
 const NoBookFound = ({
   title,
   subtitleOne,
