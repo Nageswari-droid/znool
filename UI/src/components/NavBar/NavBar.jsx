@@ -20,6 +20,7 @@ const NavBar = () => {
 
   const showAddBookButton =
     location.pathname !== "/add-new-book" &&
+    !location.pathname.startsWith("/edit-book/") &&
     !location.pathname.startsWith("/error/");
 
   return (
